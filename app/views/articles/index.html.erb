@@ -1,5 +1,15 @@
+
 <% @articles.each do |article| %>
-  <p><%= article.header %></p>
-  <p><%= article.subheader %></p>
-  <p><%= article.body %></p>
+  <div id=header>
+    <p><%= article.header %></p>
+  </div>
+
+  <div id=subheader>
+    <p><%= article.subheader %></p>
+  </div>
+
+  <div id=subheader>
+    <p><%= article.body %></p>
+  </div>
+
 <% end %>
