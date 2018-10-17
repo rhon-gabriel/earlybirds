@@ -9,6 +9,6 @@ Feature: Articles on the landing page
       | Top title             | A breaking news item            | Today at craftacademy   |
   
     When I visit the site
-    Then I should see a header "Top title"
-    And I should see subheader "A breaking news item"
-    And I should see body "Today at craftacademy"
+    Then I should see "Top title"
+    And I should see "A breaking news item"
+    And I should see "Today at craftacademy"
