@@ -20,7 +20,6 @@ Feature: Articles on the landing page
   Scenario: View available articles on the landing page
     When I visit the site
     And I click on "Programming"
-    Then stop
     Then I should see "Top title"
     And I should see "A breaking news item"
     And I should see "Today at craftacademy"
