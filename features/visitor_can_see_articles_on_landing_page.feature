@@ -4,6 +4,12 @@ Feature: Articles on the landing page
   I would like to see the headlines and the first paragraphs of the available articles.
 
   Scenario: View available articles on the landing page
+
+    Given the following categories exist
+      | name        |
+      | Programming |
+      | Education   |
+      
     Given the following articles exist
       | header        | subheader             | body                     | category    |
       | Top title     | A breaking news item  | Today at craftacademy    | Programming |
