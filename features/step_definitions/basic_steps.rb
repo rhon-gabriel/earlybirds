@@ -18,3 +18,11 @@ end
 When("I fill in {string} with {string}") do |field, content|
   fill_in field, with: content
 end
+
+When("I click on Politics") do 
+  find('#article_Politics').click
+end
+
+Then("I click {string}") do |link|
+  click_on link
+end

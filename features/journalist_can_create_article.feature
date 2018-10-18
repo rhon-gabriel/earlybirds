@@ -11,5 +11,5 @@ Feature: Create articles inside category
     And I fill in "Subheader" with "Excited about learning a new framework"
     And I fill in "Byline" with "Angelica the Great"
     And I fill in "Body" with "Angelica in craftacademy"
-    And I check "Politics"
+    And I click on Politics
     Then I click "Submit"
