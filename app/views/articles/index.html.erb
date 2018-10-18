@@ -1,0 +1,20 @@
+
+<% @articles.each do |article| %>
+  <div id=header>
+    <p><%= article.header %></p>
+  </div>
+
+  <div id=subheader>
+    <p><%= article.subheader %></p>
+  </div>
+
+  <div id=body>
+    <p><%= article.body %></p>
+  </div>
+
+  <div id=imageplaceholder>
+    <%=image_tag("trump.jpg")%>
+  </div>
+
+
+<% end %>
