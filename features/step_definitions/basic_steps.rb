@@ -12,5 +12,5 @@ When('I click on {string}') do |element_text|
 end
 
 When("I visit the admin page") do
-  visit admin_path
+  visit admin_articles_path
 end
