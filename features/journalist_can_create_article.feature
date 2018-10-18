@@ -7,6 +7,7 @@ Feature: Create articles inside category
     When I visit the create page
 
   Scenario: Journalist create article inside category
+    Then stop
     When I fill in "Header" with "Learning Rails 5"
     And I fill in "Subheader" with "Excited about learning a new framework"
     And I fill in "Byline" with "Angelica the Great"
