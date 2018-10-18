@@ -1,0 +1,11 @@
+- Category.all.each do |category|
+  = link_to category.name, root_path(category: category.id)
+- @articles.each do |article|
+  #header
+    %p= article.header
+  #subheader
+    %p= article.subheader
+  #body
+    %p= article.body
+  #imageplaceholder
+    = image_tag("trump.jpg")
