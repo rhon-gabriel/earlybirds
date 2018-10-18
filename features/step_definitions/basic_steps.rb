@@ -10,3 +10,7 @@ end
 When('I click on {string}') do |element_text|
   click_on element_text
 end
+
+When("I visit the admin page") do
+  visit admin_path
+end
