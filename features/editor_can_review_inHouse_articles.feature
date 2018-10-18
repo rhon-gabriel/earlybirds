@@ -20,6 +20,7 @@ Feature: Editor can review in-house articles
     Scenario: View list of articles submitted for approval
         When I visit the admin page
         And I click on "Review articles"
+        # And stop
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
