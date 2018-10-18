@@ -1,5 +1,5 @@
-Given("the following articles exists") do |table|
+Given("the following articles exist") do |table|
     table.hashes.each do |article|
       create(:article, article)
     end
-  end
+end
