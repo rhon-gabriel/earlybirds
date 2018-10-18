@@ -1,0 +1,20 @@
+= form_with url: new_article_path, scope: :article  do |f|
+  %div
+    = f.label :header
+    = f.text_field :header
+  %div
+    = f.label :subheader
+    = f.text_area :subheader
+  %div
+    = f.label :byline
+    = f.text_area :byline
+  %div
+    = f.label :body
+    = f.text_area :body
+  %div
+    = f.check_box:Politics
+    Politics
+    %br/
+    %br/
+  %div
+    = f.submit "Submit", class: "btn btn-success" 
