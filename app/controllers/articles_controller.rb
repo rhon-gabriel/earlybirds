@@ -7,6 +7,9 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def admin_index
+  end
+
   def edit
     @article = Article.find(params[:id])
   end
