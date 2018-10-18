@@ -12,8 +12,10 @@ class ArticlesController < ApplicationController
       @article = @category.article.create(article_params)
   end
 
+end
   private
   def article_params
     params.require(:article).permit(:header, :subheader, :body)
   end
+
 end
