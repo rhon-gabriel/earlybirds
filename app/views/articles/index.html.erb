@@ -1,4 +1,6 @@
-
+<% Category.all.each do |category| %>
+  <%= link_to category.name, root_path(category: category.id)%>
+<% end %>
 <% @articles.each do |article| %>
   <div id=header>
     <p><%= article.header %></p>

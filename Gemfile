@@ -23,6 +23,9 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'
+
 end
 
 group :development do
