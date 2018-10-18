@@ -3,8 +3,8 @@ FactoryBot.define do
     header { "MyString" }
     subheader { "MyText" }
     body { "MyText" }
-
+    status { "MyString"}
+    
     category
-    status { "MyString" }
   end
 end
