@@ -8,12 +8,14 @@ RSpec.describe Article, type: :model do
     it { is_expected.to have_db_column :header }
     it { is_expected.to have_db_column :subheader }
     it { is_expected.to have_db_column :body }
+    it { is_expected.to have_db_column :status }
   end
 
   describe 'Validations' do
     it { is_expected.to validate_presence_of :header }
     it { is_expected.to validate_presence_of :subheader }
     it { is_expected.to validate_presence_of :body }
+    it { is_expected.to validate_presence_of :status }
   end
 
   describe 'Associations' do

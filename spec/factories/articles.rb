@@ -5,5 +5,6 @@ FactoryBot.define do
     body { "MyText" }
 
     category
+    status { "MyString" }
   end
 end
