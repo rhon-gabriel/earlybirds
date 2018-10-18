@@ -19,8 +19,8 @@ When("I fill in {string} with {string}") do |field, content|
   fill_in field, with: content
 end
 
-When("I click on Politics") do 
-  find('#article_Politics').click
+When("I select {string} as the category") do |option|
+  select option, from: 'article_category_id'
 end
 
 Then("I click {string}") do |link|
