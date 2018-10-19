@@ -1,5 +1,4 @@
 @javascript
-
 Feature: Articles on the landing page
   As a visitor,
   In order to choose what article to read,
@@ -15,7 +14,6 @@ Feature: Articles on the landing page
       | header        | subheader             | body                     | category    |
       | Top title     | A breaking news item  | Today at craftacademy    | Programming |
       | Other stories | Another breaking news | Tomorrow at craftacademy | Education   |
-
 
   Scenario: View available articles on the landing page
     When I visit the site

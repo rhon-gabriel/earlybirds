@@ -1,4 +1,5 @@
-= form_with model: @article, remote: false  do |f|
+%h2 Create article
+= form_with url: admin_articles_path, scope: :article, local: true  do |f|
   %div
     = f.label :header
     = f.text_field :header
