@@ -18,8 +18,8 @@ When('I fill in {string} with {string}') do |field, content|
   fill_in field, with: content
 end
 
-When('I select {string}') do |option|
-  select option, from: 'article_category_id'
+When('I select {string} from/as {string}') do |option, element|
+  select option, from: element
 end
 
 Then('I click {string}') do |button|

@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :load_categories, only: %i[index show new create]
+  before_action :load_categories, only: %i[index]
 
   def index
     @articles = if params[:category]

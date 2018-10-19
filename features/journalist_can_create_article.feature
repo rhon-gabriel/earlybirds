@@ -20,7 +20,7 @@ Feature: Create articles inside category
     And I fill in "Subheader" with "Excited about learning a new framework"
     And I fill in "Byline" with "Angelica the Great"
     And I fill in "Body" with "Angelica in craftacademy"
-    And I select "Politics"
+    And I select "Politics" as "Category"
     And I click "Submit"
     Then I should see "Your article was successfully saved in Politics section"
 
@@ -30,6 +30,6 @@ Feature: Create articles inside category
     And I fill in "Subheader" with "Excited about learning a new framework"
     And I fill in "Byline" with "Angelica the Great"
     And I fill in "Body" with "Angelica in craftacademy"
-    And I select "Business"
+    And I select "Business" as "Category"
     Then I click "Submit"
     Then I should see "Your article was successfully saved in Business section"
