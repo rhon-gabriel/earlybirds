@@ -17,7 +17,7 @@ before_action :load_categories, only: [:index, :show, :new, :create]
   def create
       @article = Article.create(article_params)
       if @article.persisted? 
-        redirect_to root_path, flash[:notice] =  "Your article was successfully saved"
+        redirect_to root_path,  notice:  "Your article was successfully saved"
       else
         flash[:error] = "Fields can't be blank. Your article could not be saved"
         render :new      
