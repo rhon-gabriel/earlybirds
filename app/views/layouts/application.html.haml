@@ -1,22 +1,18 @@
 !!!
 %html
   %head
- create-articles
+    create-articles
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
- development
+    development
     %title Earlybirds
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
- create-articles
-    = notice
-    = flash[:error]
-    = yield
+  create-articles
+  = notice
+  = flash[:error]
+  = yield
 
-    = yield
-
- development
+  development
