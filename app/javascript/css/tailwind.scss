@@ -76,3 +76,7 @@
         @apply inline-block mt-0;
     }
 }
+
+.bg-gradient-blue-to-purple {
+    background-image: linear-gradient(to right, config('colors.blue'), config('colors.purple'));
+}
