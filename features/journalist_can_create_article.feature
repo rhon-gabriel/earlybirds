@@ -9,6 +9,8 @@ Feature: Create articles inside category
     Given the following categories exist
     | name     |
     | Politics |
+    | Business | 
+    | News     |
     When I visit the create page
 
   Scenario: Journalist create article inside category
@@ -16,5 +18,5 @@ Feature: Create articles inside category
     And I fill in "Subheader" with "Excited about learning a new framework"
     And I fill in "Byline" with "Angelica the Great"
     And I fill in "Body" with "Angelica in craftacademy"
-    And I select 'Politics' 
+    And I select "Politics" 
     Then I click "Submit"

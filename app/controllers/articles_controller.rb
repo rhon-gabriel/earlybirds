@@ -9,7 +9,6 @@ before_action :load_categories, only: [:index, :show, :new, :create]
     end
   end
 
-
   def new
     @article = Article.new
   end  
@@ -23,8 +22,6 @@ before_action :load_categories, only: [:index, :show, :new, :create]
         render :new      
       end
   end
-
-
 
   private
   def article_params
