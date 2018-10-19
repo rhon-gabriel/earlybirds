@@ -11,7 +11,7 @@ rescue NameError
 end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
-
+Chromedriver.set_version '2.42'
 World(FactoryBot::Syntax::Methods)
 
 chrome_options = %w(no-sandbox disable-popup-blocking disable-infobars window-size=1900,1400)

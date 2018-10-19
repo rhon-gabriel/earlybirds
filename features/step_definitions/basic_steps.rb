@@ -21,7 +21,7 @@ end
 
 When("I select {string} as the category") do |option|
   select option, from: 'article_category_id'
-end
+end	
 
 Then("I click {string}") do |link|
   click_on link

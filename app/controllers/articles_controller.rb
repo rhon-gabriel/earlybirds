@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
- 
-before_action :load_categories, only: [:new, :create]
+before_action :load_categories, only: [:index, :show, :new, :create]
 
   def index
     if params[:category]
@@ -16,11 +15,12 @@ before_action :load_categories, only: [:new, :create]
   end  
 
   def create
-      # @category = Category.find(params[:category_id])
+      @article = Article.create(article_params)
       if @article.persisted? 
-        redirect_to articles_path, flash[:notice] =  "Your article was successfully saved"
+        redirect_to root_path, flash[:notice] =  "Your article was successfully saved"
       else
-        redirect_to new_article_path, flash[:error] =  "Your article could not be saved"
+        flash[:error] = "Fields can't be blank. Your article could not be saved"
+        render :new      
       end
   end
 
