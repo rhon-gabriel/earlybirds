@@ -20,3 +20,11 @@ Feature: Create articles inside category
     And I fill in "Body" with "Angelica in craftacademy"
     And I select "Politics" 
     Then I click "Submit"
+
+  Scenario: Journalist create article inside another category
+    When I fill in "Header" with "Learning Rails 5"
+    And I fill in "Subheader" with "Excited about learning a new framework"
+    And I fill in "Byline" with "Angelica the Great"
+    And I fill in "Body" with "Angelica in craftacademy"
+    And I select "Business" 
+    Then I click "Submit"
