@@ -1,8 +1,3 @@
-# frozen_string_literal: true
-Then "stop" do
-  binding.pry
-end
-
 When('I visit the site') do
   visit root_path
 end
