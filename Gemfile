@@ -13,6 +13,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml-rails'
+gem 'webpacker'
+gem 'tailwindcss', '~> 0.2.0'
 
 group :development, :test do
   gem 'factory_bot_rails'

@@ -1,3 +1,6 @@
+.nav
+  = render partial: 'partials/navigation'
+.articlelist
 - Category.all.each do |category|
   = link_to category.name, root_path(category: category.id)
 - @articles.each do |article|
