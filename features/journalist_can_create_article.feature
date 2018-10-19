@@ -11,9 +11,12 @@ Feature: Create articles inside category
       | Politics |
       | Business |
       | News     |
-    When I visit the create page
+
+    And I visit the admin section
 
   Scenario: Journalist creates article inside a category
+    Then stop
+    And I click "Create article"
     When I fill in "Header" with "Learning Rails 5"
     And I fill in "Subheader" with "Excited about learning a new framework"
     And I fill in "Byline" with "Angelica the Great"
@@ -23,6 +26,7 @@ Feature: Create articles inside category
     Then I should see "Your article was successfully saved in Politics section"
 
   Scenario: Journalist create article inside another category
+    And I click "Create article"
     When I fill in "Header" with "Learning Rails 5"
     And I fill in "Subheader" with "Excited about learning a new framework"
     And I fill in "Byline" with "Angelica the Great"
