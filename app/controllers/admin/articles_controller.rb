@@ -1,19 +1,13 @@
 # frozen_string_literal: true
 
 class Admin::ArticlesController < Admin::AdminController
-  before_action :load_categories, only: %i[index new create]
+  before_action :load_categories, only: %i[new create]
 
   def index
-    @articles = if params[:category]
-                  Article.where(category_id: params[:category])
-                else
-                  Article.all
-                end
+    @articles = Article.pending
   end
 
-  def new
-    @article = Article.new
-  end
+  def new; end
 
   def create
     @article = Article.create(article_params)

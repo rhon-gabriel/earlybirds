@@ -2,7 +2,7 @@ When('I visit the site') do
   visit root_path
 end
 
-Given('I visit the admin section') do
+Given('I visit the admin section/page') do
   visit admin_root_path
 end
 
