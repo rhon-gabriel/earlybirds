@@ -1,11 +1,11 @@
+%h2 Welcome to EarlyBirds CMS
 - @articles.each do |article|
-    #header
-        %p= article.header
-    #subheader
-        %p= article.subheader
-    #body
-        %p= article.body
-    #body
-        %p= article.status
-    #imageplaceholder
-        = image_tag("trump.jpg")
+    %div{id: dom_id(article)}
+        #header
+            %p= article.header
+        #subheader
+            %p= article.subheader
+        #body
+            %p= article.body
+        #imageplaceholder
+            = image_tag("trump.jpg")
