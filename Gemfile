@@ -27,6 +27,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'launchy'
 
 end
 

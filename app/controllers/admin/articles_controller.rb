@@ -20,9 +20,9 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def update
+    binding.pry
     @article = Article.find(article_params)
     @article.send([params[:status], '!'].join.to_sym)
-    binding.pry
     if params[:article][:status] == :approved
       notice "Article approved for publication"
     else
