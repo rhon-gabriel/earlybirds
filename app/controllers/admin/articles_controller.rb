@@ -4,7 +4,7 @@ class Admin::ArticlesController < Admin::AdminController
   before_action :load_categories, only: %i[new create]
 
   def index
-    @articles = Article.where(status: 'Pending')
+    @articles = Article.pending
   end
 
   def new; end

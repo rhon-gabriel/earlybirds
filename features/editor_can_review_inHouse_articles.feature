@@ -7,14 +7,14 @@ Feature: Editor can review in-house articles
 
     Background:
         Given the following categories exist
-        | name        |
-        | Programming |
-        | Education   |
+            | name        |
+            | Programming |
+            | Education   |
 
-    Given the following articles exist
-        | header        | subheader             | body                     | category    | status   |
-        | Top title     | A breaking news item  | Today at craftacademy    | Programming | Pending  |
-        | Other stories | Another breaking news | Tomorrow at craftacademy | Education   | Approved |
+        Given the following articles exist
+            | header        | subheader             | body                     | category    | status   |
+            | Top title     | A breaking news item  | Today at craftacademy    | Programming | pending  |
+            | Other stories | Another breaking news | Tomorrow at craftacademy | Education   | approved |
 
 
     Scenario: View list of articles submitted for approval

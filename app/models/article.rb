@@ -9,7 +9,9 @@ class Article < ApplicationRecord
   validates :body, presence: true
   validates :status, presence: true
 
+  enum status: { pending: 0, approved: 1, rejected: 2 }
+
   def set_default_status
-    self.status ||= 'pending'
+    self.status ||= :pending
   end
 end

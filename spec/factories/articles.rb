@@ -3,7 +3,7 @@ FactoryBot.define do
     header { "MyString" }
     subheader { "MyText" }
     body { "MyText" }
-    status { "MyString"}
+    status { :pending }
     
     category
   end
