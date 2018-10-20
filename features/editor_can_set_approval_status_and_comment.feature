@@ -20,6 +20,6 @@ Feature: Editor can set approval status and comment
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
-        Then I check "Approved"
+        Then I check "approve"
         And I click "Submit"
         Then I should see "Article approved for publication"

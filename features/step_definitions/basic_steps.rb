@@ -27,7 +27,7 @@ Then('I click {string}') do |button|
 end
 
 Then("I check {string}") do |string|
-  page.check('status')
+  page.check(string)
 end
 
 Then("stop") do
