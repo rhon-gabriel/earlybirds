@@ -10,4 +10,4 @@
         #imageplaceholder
             = image_tag("trump.jpg")
         = check_box_tag 'approve', 'approve'
-        = button_tag 'Submit' , class: 'submit-button' , type: :submit
+        = link_to "Submit", admin_article_path

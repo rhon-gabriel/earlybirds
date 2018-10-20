@@ -19,9 +19,20 @@ class Admin::ArticlesController < Admin::AdminController
     end
   end
 
+  def update
+    @article = Article.find(article_params)
+    @article.send([params[:status], '!'].join.to_sym)
+    binding.pry
+    if params[:article][:status] == :approved
+      notice "Article approved for publication"
+    else
+      notice "Article not approved for publication"
+    end
+  end
+
   private
 
   def article_params
-    params.require(:article).permit(:header, :subheader, :body, :byline, :category_id)
+    params.require(:article).permit(:header, :subheader, :body, :byline, :category_id, :status)
   end
 end

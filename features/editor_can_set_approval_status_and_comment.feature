@@ -21,5 +21,5 @@ Feature: Editor can set approval status and comment
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
         Then I check "approve"
-        And I click "Submit"
+        And I click on "Submit"
         Then I should see "Article approved for publication"
