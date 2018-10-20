@@ -1,0 +1,20 @@
+%h2 Create article
+= form_with url: admin_articles_path, scope: :article, local: true  do |f|
+  %div
+    = f.label :header
+    = f.text_field :header
+  %div
+    = f.label :subheader
+    = f.text_area :subheader
+  %div
+    = f.label :byline
+    = f.text_area :byline
+  %div
+    = f.label :body
+    = f.text_area :body
+  %div
+    = f.label :category_id, 'Category'
+    = f.collection_select :category_id, @categories, :id, :name
+    %br/
+  %div
+    = f.submit "Submit", class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
