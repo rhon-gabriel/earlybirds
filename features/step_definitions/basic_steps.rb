@@ -26,14 +26,11 @@ Then('I click {string}') do |button|
   click_on button
 end
 
-Then("I check {string}") do |string|
-  page.check(string)
+Then("I select {string}") do |value|
+  choose value
 end
 
 Then("stop") do
   binding.pry
 end
 
-And('show me the page') do
-  save_and_open_page
-end

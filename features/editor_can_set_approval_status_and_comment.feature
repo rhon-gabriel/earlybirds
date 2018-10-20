@@ -11,8 +11,8 @@ Feature: Editor can set approval status and comment
             | Programming |
 
         Given the following articles exist
-            | header        | subheader             | body                     | category    | status   | id |
-            | Top title     | A breaking news item  | Today at craftacademy    | Programming | pending  | 1  |
+            | header    | subheader            | body                  | category    | status  |
+            | Top title | A breaking news item | Today at craftacademy | Programming | pending |
 
     Scenario: Approve article for publishing
         When I visit the admin page
@@ -20,7 +20,16 @@ Feature: Editor can set approval status and comment
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
-        Then I check "approved"
-        And I click on "Submit"
-        And show me the page
+        Then I select "Approved"
+        And I click on "Update"
         Then I should see "Article approved for publication"
+
+    Scenario: Reject article for publishing
+        When I visit the admin page
+        And I click on "Review articles"
+        Then I should see "Top title"
+        And I should see "A breaking news item"
+        And I should see "Today at craftacademy"
+        Then I select "Rejected"
+        And I click on "Update"
+        Then I should see "Article not approved for publication"

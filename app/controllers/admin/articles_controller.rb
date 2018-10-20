@@ -20,17 +20,20 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def update
-    binding.pry
-    @article = Article.find(article_params)
-    @article.send([params[:status], '!'].join.to_sym)
-    if params[:article][:status] == :approved
-      redirect_to admin_articles_path, notice: "Article approved for publication"
-    else
-      redirect_to admin_articles_path, notice: "Article not approved for publication"
+    @article = Article.find(params[:id])
+    update_status if article_params[:status]
+    if @article.approved?
+      redirect_to admin_articles_path, notice: 'Article approved for publication'
+    elsif @article.rejected?
+      redirect_to admin_articles_path, notice: 'Article not approved for publication'
     end
   end
 
   private
+
+  def update_status
+    @article.send([article_params[:status], '!'].join.to_sym)
+  end
 
   def article_params
     params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status)
