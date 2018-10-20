@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_10_18_180148) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
+    t.integer "status"
     t.string "byline"
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
