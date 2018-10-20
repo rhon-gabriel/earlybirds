@@ -24,15 +24,15 @@ class Admin::ArticlesController < Admin::AdminController
     @article = Article.find(article_params)
     @article.send([params[:status], '!'].join.to_sym)
     if params[:article][:status] == :approved
-      notice "Article approved for publication"
+      redirect_to admin_articles_path, notice: "Article approved for publication"
     else
-      notice "Article not approved for publication"
+      redirect_to admin_articles_path, notice: "Article not approved for publication"
     end
   end
 
   private
 
   def article_params
-    params.require(:article).permit(:header, :subheader, :body, :byline, :category_id, :status)
+    params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status)
   end
 end
