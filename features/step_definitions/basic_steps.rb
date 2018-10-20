@@ -26,6 +26,10 @@ Then('I click {string}') do |button|
   click_on button
 end
 
+Then("I check {string}") do |string|
+  page.check('status')
+end
+
 Then("stop") do
   binding.pry
 end
