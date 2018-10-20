@@ -8,14 +8,16 @@
         #body
             %p= article.body
         #imageplaceholder
-            = image_tag("trump.jpg")
-        = form_with url: admin_article_path, scope: :article, local: true  do |f|
-            %div
-                = f.check_box_tag(:approved)
-                = f.label_tag(:approved, "Approve")
-                %br
-            %div
-                = f.submit "Submit", class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
-        
-        -# = check_box_tag 'approve', 'approve'
+            = image_tag("trump.jpg")        
+        = check_box_tag 'approve', 'approve'
+        = link_to "Submit"
+
+        -# = form_with url: admin_article_path, scope: :article, local: true  do |f|
+        -#     %div
+        -#         = f.check_box_tag(:approved)
+        -#         = f.label_tag(:approved, "Approve")
+        -#         %br
+        -#     %div
+        -#         = f.submit "Submit", class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
+
         -# = link_to "Submit", admin_article_path(@admin, @article)

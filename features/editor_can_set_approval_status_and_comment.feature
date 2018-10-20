@@ -11,8 +11,8 @@ Feature: Editor can set approval status and comment
             | Programming |
 
         Given the following articles exist
-            | header        | subheader             | body                     | category    | status   |
-            | Top title     | A breaking news item  | Today at craftacademy    | Programming | pending  |
+            | header        | subheader             | body                     | category    | status   | id |
+            | Top title     | A breaking news item  | Today at craftacademy    | Programming | pending  | 1  |
 
     Scenario: Approve article for publishing
         When I visit the admin page
