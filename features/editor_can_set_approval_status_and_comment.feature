@@ -33,3 +33,13 @@ Feature: Editor can set approval status and comment
         Then I select "Rejected"
         And I click on "Update"
         Then I should see "Article not approved for publication"
+
+    Scenario: Reject article for publishing with comments
+        When I visit the admin page
+        And I click on "Review articles"
+        Then I should see "Top title"
+        And I should see "A breaking news item"
+        And I should see "Today at craftacademy"
+        Then I select "Rejected with comments"
+        And I click on "Update"
+        Then I should see "Article not approved for publication, please respond to comments"
