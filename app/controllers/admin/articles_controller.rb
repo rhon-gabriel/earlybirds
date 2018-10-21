@@ -5,7 +5,6 @@ class Admin::ArticlesController < Admin::AdminController
 
   def index
     @articles = Article.pending
-    @news = FetchNewsService.get_news
   end
 
   def new; end

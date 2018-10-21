@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'api_news/index'
   root controller: :articles, action: :index
 
   namespace :admin do
