@@ -40,7 +40,7 @@ Feature: Editor can set approval status and comment
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
-        Then I select "Commented"
+        Then I select "For revision"
         And I fill in "Comments" with "Next time try to use more paragraphs"
         And I click on "Update"
         Then I should see "Article not approved for publication, please see comments: Next time try to use more paragraphs"

@@ -26,15 +26,15 @@ RSpec.describe Article, type: :model do
     it { is_expected.to respond_to :approved? }
     it { is_expected.to respond_to :rejected! }
     it { is_expected.to respond_to :rejected? }
-    it { is_expected.to respond_to :commented! }
-    it { is_expected.to respond_to :commented? }
+    it { is_expected.to respond_to :for_revision! }
+    it { is_expected.to respond_to :for_revision? }
   end
 
   describe 'Class methods' do
     it { expect(described_class).to respond_to :pending }
     it { expect(described_class).to respond_to :approved }
     it { expect(described_class).to respond_to :rejected }
-    it { expect(described_class).to respond_to :commented }
+    it { expect(described_class).to respond_to :for_revision }
   end
 
   describe 'Associations' do
