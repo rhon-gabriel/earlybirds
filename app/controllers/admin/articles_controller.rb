@@ -27,9 +27,8 @@ class Admin::ArticlesController < Admin::AdminController
     elsif @article.rejected?
       redirect_to admin_articles_path, notice: 'Article not approved for publication'
     elsif @article.commented?
-      update_comment
+      @article.update(article_params)
       redirect_to admin_articles_path, notice: "Article not approved for publication, please see comments: #{@article.comment}"
-      binding.pry
     end
   end
 
