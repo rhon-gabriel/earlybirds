@@ -43,6 +43,6 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def article_params
-    params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status, :comment)
+    params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status)
   end
 end
