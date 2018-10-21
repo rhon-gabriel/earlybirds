@@ -41,7 +41,6 @@ Feature: Editor can set approval status and comment
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
         Then I select "Commented"
-        And stop
-        And I fill in "comment" with "Next time try to use more paragraphs"
+        And I fill in "Comments" with "Next time try to use more paragraphs"
         And I click on "Update"
-        Then I should see "Article not approved for publication, please respond to comments"
+        Then I should see "Article not approved for publication, please see comments"

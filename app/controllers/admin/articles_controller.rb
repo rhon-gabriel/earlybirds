@@ -39,7 +39,7 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def update_comment
-    @article.send([article_params[:comment], '!'].join.to_sym)
+    @article.update(comment: :comment)
   end
 
   def article_params
