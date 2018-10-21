@@ -38,10 +38,6 @@ class Admin::ArticlesController < Admin::AdminController
     @article.send([article_params[:status], '!'].join.to_sym)
   end
 
-  def update_comment
-    @article.update(comment: params[:comment])
-  end
-
   def article_params
     params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status, :comment)
   end

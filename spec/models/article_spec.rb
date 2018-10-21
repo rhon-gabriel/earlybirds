@@ -17,7 +17,6 @@ RSpec.describe Article, type: :model do
     it { is_expected.to validate_presence_of :subheader }
     it { is_expected.to validate_presence_of :body }
     it { is_expected.to validate_presence_of :status }
-    it { is_expected.to validate_presence_of :comment }
   end
 
   describe 'Statuses' do 

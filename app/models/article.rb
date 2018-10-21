@@ -8,7 +8,6 @@ class Article < ApplicationRecord
   validates_presence_of :subheader
   validates_presence_of :body
   validates_presence_of :status
-  validates_presence_of :comment
 
   enum status: { pending: 0, approved: 1, rejected: 2, commented: 3 }
 
