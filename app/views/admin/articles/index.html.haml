@@ -1,17 +1,20 @@
-%h2 Welcome to EarlyBirds CMS
-- @articles.each do |article|
-    %div{id: dom_id(article)}
-        #header
+%h2.mt-8.font-sans.font-thin Article Submission Portal - Review
+.container.m-auto
+    - @articles.each do |article|
+        %div{id: dom_id(article)}
+            %h3.mt-8.font-sans.font-thin Header
             %p= article.header
-        #subheader
+            %h3.mt-8.font-sans.font-thin Subheader
             %p= article.subheader
-        #body
-            %p= article.body
-        #imageplaceholder
-            = image_tag("trump.jpg")        
-        = form_with url: admin_article_path(article), scope: :article, local: true, method: :patch do |form|
-            = form.collection_radio_buttons :status, Article.statuses.keys, :dup, :humanize
-            = form.label :comment, 'Comments'
-            %div
-                = form.text_area :comment, placeholder: 'Comments to be addressed'
-            = form.submit value: 'Update', class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
+            %h3.mt-8.font-sans.font-thin Body
+            %p= article.body      
+            = form_with url: admin_article_path(article), scope: :article, local: true, method: :patch do |form|
+                %div.mt-8.font-sans.font-thin
+                    = form.collection_radio_buttons :status, Article.statuses.keys, :dup, :humanize
+                %div.mt-8.font-sans.font-thin
+                    = form.label :comment, 'Comments'
+                %div.mt-8.font-sans.font-thin
+                    = form.text_area :comment, placeholder: 'Comments to be addressed'
+                    %br/
+                %div.mt-8.font-sans.font-thin
+                    = form.submit value: 'Update', class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
