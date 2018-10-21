@@ -43,4 +43,4 @@ Feature: Editor can set approval status and comment
         Then I select "Commented"
         And I fill in "Comments" with "Next time try to use more paragraphs"
         And I click on "Update"
-        Then I should see "Article not approved for publication, please see comments"
+        Then I should see "Article not approved for publication, please see comments: Next time try to use more paragraphs"

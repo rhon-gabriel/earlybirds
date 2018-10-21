@@ -28,7 +28,7 @@ class Admin::ArticlesController < Admin::AdminController
     elsif @article.rejected?
       redirect_to admin_articles_path, notice: 'Article not approved for publication'
     elsif @article.commented?
-      redirect_to admin_articles_path, notice: 'Article not approved for publication, please see comments'
+      redirect_to admin_articles_path, notice: "Article not approved for publication, please see comments: #{@article.comment}"
     end
   end
 
@@ -39,10 +39,10 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def update_comment
-    @article.update(comment: :comment)
+    @article.update(comment: params[:comment])
   end
 
   def article_params
-    params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status)
+    params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status, :comment)
   end
 end
