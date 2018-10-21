@@ -3,5 +3,6 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+category = Category.create!(name: 'Politics')
+Article.create!(category: category, header: 'A happy day', subheader: 'What larks', body: "Scenester occupy marfa actually woke food truck everyday carry. Celiac yr sriracha, YOLO pabst authentic shaman ethical ramps master cleanse tumblr fanny pack cloud bread intelligentsia hot chicken. Tote bag artisan offal PBR&B enamel pin live-edge single-origin coffee. Blue bottle kale chips lumbersexual direct trade celiac. Migas tbh blue bottle chartreuse scenester, cardigan deep v sriracha. Pickled cornhole mlkshk, before they sold out whatever you probably haven't heard of them normcore pug listicle next level tacos kogi woke drinking vinegar pok pok. Fixie DIY ramps cloud bread, deep v actually taxidermy tbh tattooed.", status: 0 )
+Article.create!(category: category, header: 'A sad day', subheader: 'What unhappy times', body: "Microdosing keffiyeh tilde vexillologist photo booth art party semiotics leggings literally health goth gastropub direct trade mustache authentic. Art party echo park 3 wolf moon pug biodiesel woke health goth. Skateboard swag pop-up man bun bushwick live-edge, umami copper mug kitsch iceland paleo messenger bag brooklyn. Flannel normcore cornhole drinking vinegar you probably haven't heard of them air plant bitters dreamcatcher hexagon shabby chic.", status: 0 )

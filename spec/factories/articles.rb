@@ -4,6 +4,7 @@ FactoryBot.define do
     subheader { "MyText" }
     body { "MyText" }
     status { :pending }
+    comment { "MyText" }
     
     category
   end
