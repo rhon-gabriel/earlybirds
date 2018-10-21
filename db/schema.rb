@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_18_180148) do
+ActiveRecord::Schema.define(version: 2018_10_21_082636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_10_18_180148) do
     t.bigint "category_id"
     t.integer "status"
     t.string "byline"
+    t.text "comment"
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
