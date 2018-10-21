@@ -22,13 +22,14 @@ class Admin::ArticlesController < Admin::AdminController
   def update
     @article = Article.find(params[:id])
     update_status if article_params[:status]
-    update_comment if article_params[:comment]
     if @article.approved?
       redirect_to admin_articles_path, notice: 'Article approved for publication'
     elsif @article.rejected?
       redirect_to admin_articles_path, notice: 'Article not approved for publication'
     elsif @article.commented?
+      update_comment
       redirect_to admin_articles_path, notice: "Article not approved for publication, please see comments: #{@article.comment}"
+      binding.pry
     end
   end
 
