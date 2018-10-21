@@ -22,10 +22,13 @@ class Admin::ArticlesController < Admin::AdminController
   def update
     @article = Article.find(params[:id])
     update_status if article_params[:status]
+    update_comment if article_params[:comment]
     if @article.approved?
       redirect_to admin_articles_path, notice: 'Article approved for publication'
     elsif @article.rejected?
       redirect_to admin_articles_path, notice: 'Article not approved for publication'
+    elsif @article.commented?
+      redirect_to admin_articles_path, notice: 'Article not approved for publication, please see comments'
     end
   end
 
@@ -35,7 +38,11 @@ class Admin::ArticlesController < Admin::AdminController
     @article.send([article_params[:status], '!'].join.to_sym)
   end
 
+  def update_comment
+    @article.send([article_params[:comment], '!'].join.to_sym)
+  end
+
   def article_params
-    params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status)
+    params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status, :comment)
   end
 end

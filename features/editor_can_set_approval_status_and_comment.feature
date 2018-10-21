@@ -11,8 +11,8 @@ Feature: Editor can set approval status and comment
             | Programming |
 
         Given the following articles exist
-            | header    | subheader            | body                  | category    | status  |
-            | Top title | A breaking news item | Today at craftacademy | Programming | pending |
+            | header    | subheader            | body                  | category    | status  | comment                              |
+            | Top title | A breaking news item | Today at craftacademy | Programming | pending | No comments currently logged         |
 
     Scenario: Approve article for publishing
         When I visit the admin page
@@ -41,6 +41,7 @@ Feature: Editor can set approval status and comment
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
         Then I select "Commented"
-        And I fill in "Comments" with "Next time try to use more paragraphs"
+        And stop
+        And I fill in "comment" with "Next time try to use more paragraphs"
         And I click on "Update"
         Then I should see "Article not approved for publication, please respond to comments"
