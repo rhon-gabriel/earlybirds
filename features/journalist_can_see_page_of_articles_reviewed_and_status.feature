@@ -12,9 +12,10 @@ Feature: Journalist can see reviewed articles
             | Education   |
 
         Given the following articles exist
-            | header        | subheader             | body                     | category    | status   |
-            | Top title     | A breaking news item  | Today at craftacademy    | Programming | approved |
-            | Other stories | Another breaking news | Tomorrow at craftacademy | Education   | pending  |
+            | header        | subheader             | body                      | category    | status   |
+            | Top title     | A breaking news item  | Today at craftacademy     | Programming | approved |
+            | Other stories | Another breaking news | Tomorrow at craftacademy  | Education   | pending  |
+            | More stories  | More breaking news    | Yesterday at craftacademy | Education   | rejected |
 
 
     Scenario: View list of reviewed articles
@@ -24,6 +25,9 @@ Feature: Journalist can see reviewed articles
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
         And I should see "Approved"
+        And I should see "More stories"
+        And I should see "Yesterday at craftacademy"
+        And I should see "Rejected"
         And I should not see "Other stories"
         And I should not see "Another breaking news"
         And I should not see "Tomorrow at craftacademy"
