@@ -8,9 +8,14 @@ Feature: Display third-party articles
     Background:
         Given I am on the third-party articles page
 
-    Scenario: View list of third-party articles
-        Then I should see "Top News"
+    Scenario: View list of "News" category
+        Then I should see "News"
         And I should see '.article-title' element
         And I should see '.article-content' element
-        And I should see '.article-agency' element
+        And I should see '.article-author' element
         
+    Scenario: View list of "Politics" category
+        Then I should see "Politics"
+        And I should see '.article-title' element
+        And I should see '.article-content' element
+        And I should see '.article-author' element

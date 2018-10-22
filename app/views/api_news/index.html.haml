@@ -4,29 +4,29 @@
         %div.max-w-sm.rounded.overflow-hidden.shadow-lg
             %h5= feed.title
             %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
-            %p= feed.description
-            %p= feed.author
+            %p.article-content= feed.description
+            %p.article-author'= feed.author
 
     %p Politics
     - @apipolitics.each do | feed |
         %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-            %h5= feed.title
+            %h5.article-title= feed.title
             %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
-            %p= feed.description
-            %p= feed.author
+            %p.article-content= feed.description
+            %p.article-author'= feed.author
 
     %p Sports
     -  @apisports.each do |feed |
         %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-            %h5= feed.title
+            %h5.article-title= feed.title
             %img{:src => "#{feed.urlToImage}", :width => "300px"}/
-            %p= feed.description
-            %p= feed.author
+            %p.article-content= feed.description
+            %p.article-author'= feed.author
 
     %p Business
     -  @apibusiness.each do | feed |
         %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-            %h5= feed.title
+            %h5.article-title= feed.title
             %img{:src => "#{feed.urlToImage}", :width => "300px"}/
-            %p= feed.description
-            %p= feed.author
+            %p.article-content= feed.description
+            %p.article-author'= feed.author
