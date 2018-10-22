@@ -2,6 +2,6 @@
 
 class Admin::DashboardController < Admin::AdminController
   def index
-    @articles = Article.approved
+    @articles = Article.where.not(status: 0)
   end
 end
