@@ -19,10 +19,11 @@ Feature: Journalist can see reviewed articles
 
     Scenario: View list of reviewed articles
         When I visit the admin page
+        And stop
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
-        And I should see "Article approved and published"
+        And I should see "Approved"
         And I should not see "Other stories"
         And I should not see "Another breaking news"
         And I should not see "Tomorrow at craftacademy"
