@@ -2,6 +2,7 @@
 
 class Article < ApplicationRecord
   after_initialize :set_default_status
+  after_initialize :set_default_premium_status
 
   belongs_to :category
   validates_presence_of :header
