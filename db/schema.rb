@@ -23,11 +23,8 @@ ActiveRecord::Schema.define(version: 2018_10_21_082636) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.string "byline"
-<<<<<<< HEAD
     t.integer "status"
-=======
     t.text "comment"
->>>>>>> beab7440a1f0b4a4878796da4a14b786ec1276fb
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
