@@ -1,0 +1,28 @@
+%div.font-thin.text-base
+    - @apigeneral.each do | feed |
+        %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+            %h5= feed.title
+            %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
+            %p= feed.description
+            %p= feed.author
+            
+    - @apipolitics.each do | feed |
+        %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+            %h5= feed.title
+            %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
+            %p= feed.description
+            %p= feed.author
+
+    -  @apisports.each do |feed |
+        %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+            %h5= feed.title
+            %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+            %p= feed.description
+            %p= feed.author
+
+    -  @apibusiness.each do | feed |
+        %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+            %h5= feed.title
+            %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+            %p= feed.description
+            %p= feed.author

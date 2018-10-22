@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 %h2 Welcome to EarlyBirds CMS
 - @articles.each do |article|
     %div{id: dom_id(article)}
@@ -10,24 +9,3 @@
             %p= article.body
         #imageplaceholder
             = image_tag("trump.jpg")
-=======
-%h2.mt-8.font-sans.font-thin Article Submission Portal - Review
-.container.m-auto
-    - @articles.each do |article|
-        %div{id: dom_id(article)}
-            %h3.mt-8.font-sans.font-thin Header
-            %p.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline= article.header
-            %h3.mt-8.font-sans.font-thin Subheader
-            %p.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline= article.subheader
-            %h3.mt-8.font-sans.font-thin Body
-            %p.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline= article.body      
-            = form_with url: admin_article_path(article), scope: :article, local: true, method: :patch do |form|
-                %div.mt-8.font-sans.font-thin.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline
-                    = form.collection_radio_buttons :status, Article.statuses.keys, :dup, :humanize
-                %div.mt-8.font-sans.font-thin
-                    = form.label :comment, 'Comments'
-                    = form.text_area :comment, placeholder: 'Comments to be addressed', class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
-                    %br/
-                %div.mt-8.font-sans.font-thin
-                    = form.submit value: 'Update', class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
->>>>>>> beab7440a1f0b4a4878796da4a14b786ec1276fb

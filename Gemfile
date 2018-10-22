@@ -16,6 +16,7 @@ gem 'haml-rails'
 gem 'webpacker'
 gem 'tailwindcss', '~> 0.2.0'
 gem 'rest-client'
+gem 'news-api'
 
 group :development, :test do
   gem 'factory_bot_rails'
