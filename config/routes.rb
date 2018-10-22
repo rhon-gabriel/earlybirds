@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root controller: :dashboard, action: :index
-    resources :articles, only: %i[new create index]
+    resources :articles, only: %i[new create index update]
   end
 end

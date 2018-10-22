@@ -14,3 +14,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener('turbolinks:load', () => {
+    let textElement = document.getElementById('article_comment')
+    let forRevisionButton = document.getElementById('article_status_for_revision')
+    if (textElement && forRevisionButton) {
+        textElement.disabled = true
+        forRevisionButton.addEventListener('click', () => {
+            if (forRevisionButton.checked === true) {
+                textElement.disabled = false
+            }
+        })
+    }
+})

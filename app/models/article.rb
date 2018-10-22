@@ -4,12 +4,12 @@ class Article < ApplicationRecord
   after_initialize :set_default_status
 
   belongs_to :category
-  validates :header, presence: true
-  validates :subheader, presence: true
-  validates :body, presence: true
-  validates :status, presence: true
+  validates_presence_of :header
+  validates_presence_of :subheader
+  validates_presence_of :body
+  validates_presence_of :status
 
-  enum status: { pending: 0, approved: 1, rejected: 2 }
+  enum status: { pending: 0, approved: 1, rejected: 2, for_revision: 3 }
 
   def set_default_status
     self.status ||= :pending
