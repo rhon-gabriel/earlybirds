@@ -22,6 +22,7 @@ class Admin::ArticlesController < Admin::AdminController
   def update
     @article = Article.find(params[:id])
     update_status if article_params[:status]
+    update_premium_status if article_params[:premium_status]
     if @article.approved?
       redirect_to admin_articles_path, notice: 'Article approved for publication'
     elsif @article.rejected?
@@ -36,6 +37,10 @@ class Admin::ArticlesController < Admin::AdminController
 
   def update_status
     @article.send([article_params[:status], '!'].join.to_sym)
+  end
+
+  def update_premium_status
+    @article.send([article_params[:premium_status], '!'].join.to_sym)
   end
 
   def article_params

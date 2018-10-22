@@ -11,8 +11,8 @@ Feature: Editor can select if in-house approved article is free or premium
             | Programming |
 
         Given the following articles exist
-            | header    | subheader            | body                  | category    | status  | comment                              |
-            | Top title | A breaking news item | Today at craftacademy | Programming | pending | No comments currently logged         |
+            | header    | subheader            | body                  | category    | status  | comment                      | premium_status |
+            | Top title | A breaking news item | Today at craftacademy | Programming | pending | No comments currently logged | free           |
 
         Given I visit the admin page
         And I click on "Review articles"
