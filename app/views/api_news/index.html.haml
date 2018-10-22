@@ -1,11 +1,13 @@
 %div.font-thin.text-base
+    %p News
     - @apigeneral.each do | feed |
         %div.max-w-sm.rounded.overflow-hidden.shadow-lg
             %h5= feed.title
             %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
             %p= feed.description
             %p= feed.author
-            
+
+    %p Politics
     - @apipolitics.each do | feed |
         %div.max-w-sm.rounded.overflow-hidden.shadow-lg
             %h5= feed.title
@@ -13,6 +15,7 @@
             %p= feed.description
             %p= feed.author
 
+    %p Sports
     -  @apisports.each do |feed |
         %div.max-w-sm.rounded.overflow-hidden.shadow-lg
             %h5= feed.title
@@ -20,6 +23,7 @@
             %p= feed.description
             %p= feed.author
 
+    %p Business
     -  @apibusiness.each do | feed |
         %div.max-w-sm.rounded.overflow-hidden.shadow-lg
             %h5= feed.title

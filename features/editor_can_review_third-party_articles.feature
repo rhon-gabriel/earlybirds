@@ -1,16 +1,16 @@
 @javascript
 
-Feature: Editor can review third-party articles
+Feature: Display third-party articles
     As an Editor,
     In order to select external articles for publication,
-    I would like to approve articles available with premium or non premium status
+    I would like to display third party articles
 
     Background:
-        Given the following categories exist
-            | name        |
-            | Programming |
-            | Education   |
+        Given I am on the third-party articles page
 
-    Scenario: View list of third-party articles submitted for approval
-        When I visit the site
+    Scenario: View list of third-party articles
+        Then I should see "Top News"
+        And I should see '.article-title' element
+        And I should see '.article-content' element
+        And I should see '.article-agency' element
         
