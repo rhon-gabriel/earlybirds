@@ -26,6 +26,11 @@ Then('I click {string}') do |button|
   click_on button
 end
 
+Then("I select {string}") do |value|
+  choose value
+end
+
 Then("stop") do
   binding.pry
 end
+
