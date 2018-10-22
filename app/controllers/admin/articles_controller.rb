@@ -23,8 +23,10 @@ class Admin::ArticlesController < Admin::AdminController
     @article = Article.find(params[:id])
     update_status if article_params[:status]
     update_premium_status if article_params[:premium_status]
-    if @article.approved?
+    if @article.approved? && @article.free?
       redirect_to admin_articles_path, notice: 'Article approved for publication'
+    elsif @article.approved? && @article.premium?
+      redirect_to admin_articles_path, notice: 'Premium article approved for publication'  
     elsif @article.rejected?
       redirect_to admin_articles_path, notice: 'Article not approved for publication'
     elsif @article.for_revision?
@@ -44,6 +46,6 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def article_params
-    params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status, :comment)
+    params.require(:article).permit(:id, :header, :subheader, :body, :byline, :category_id, :status, :comment, :premium_status)
   end
 end
