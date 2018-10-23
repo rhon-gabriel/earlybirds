@@ -1,7 +1,10 @@
 { 
     "status":"ok",
     "totalResults":20,
-    "articles":[{"source":{"id":null,"name":"Bbc.com"},
+    "articles":[
+        {"source":
+            {"id":null,
+            "name":"Bbc.com"},
     "author":"https://www.facebook.com/bbcnews",
     "title":"Donald Trump: US will build up nuclear arsenal",
     "description":"The US president says Russia has violated a key nuclear treaty, which he has threatened to abandon.",
