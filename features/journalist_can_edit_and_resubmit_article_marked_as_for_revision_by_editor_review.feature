@@ -20,7 +20,7 @@ Feature: Journalist can resubmit article marked as for revision
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
         And I should see "For revision"
-        When I click "Update article"
+        When I click on "Update article" for "Top title"
         Then I should be on the edit article page
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
