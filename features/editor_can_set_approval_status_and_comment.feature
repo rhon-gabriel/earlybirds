@@ -11,16 +11,14 @@ Feature: Editor can set approval status and comment
             | Programming |
 
         Given the following articles exist
-            | header    | subheader            | body                  | category    | status  | comment                              |
-            | Top title | A breaking news item | Today at craftacademy | Programming | pending | No comments currently logged         |
-            | Top title2 | A breaking news item | Today at craftacademy | Programming | pending | No comments currently logged         |   
+            | header    |  category    | status  | comment                              |
+            | Top title |  Programming | pending | No comments currently logged         |
+            | Top title2|  Programming | pending | No comments currently logged         |   
 
     Scenario: Approve article for publishing
         When I visit the admin page
         And I click on "Review articles"
         Then I should see "Top title"
-        And I should see "A breaking news item"
-        And I should see "Today at craftacademy"
         Then I select "Approved" for "Top title"
         And I click on "Update" for "Top title"
         Then I should see "Article approved for publication"
@@ -29,8 +27,6 @@ Feature: Editor can set approval status and comment
         When I visit the admin page
         And I click on "Review articles"
         Then I should see "Top title"
-        And I should see "A breaking news item"
-        And I should see "Today at craftacademy"
         Then I select "Rejected" for "Top title"
         And I click on "Update" for "Top title"
         Then I should see "Article not approved for publication"
@@ -39,8 +35,6 @@ Feature: Editor can set approval status and comment
         When I visit the admin page
         And I click on "Review articles"
         Then I should see "Top title"
-        And I should see "A breaking news item"
-        And I should see "Today at craftacademy"
         Then I select "For revision" for "Top title"
         And I fill in "Comments" for "Top title" with "Next time try to use more paragraphs"
         And I click on "Update" for "Top title" 
