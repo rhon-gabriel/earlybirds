@@ -2,8 +2,8 @@
 @api_call
 Feature: Display third-party articles
     As an Editor,
-    In order to select external articles for publication,
-    I would like to display third party articles
+    In order to review external articles of interest
+    I would like to see a list of third party articles available.
 
     Background:
         Given I am on the third-party articles page
