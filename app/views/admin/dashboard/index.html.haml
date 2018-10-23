@@ -3,3 +3,16 @@
         = link_to 'Create article', new_admin_article_path, class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
     %li.mr-3
         = link_to 'Review articles', admin_articles_path, class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
+
+%h2.mt-8.font-sans.font-thin Article Submission Portal - Reviewed Articles and Status
+.container.m-auto
+    - @articles.each do |article|
+        %div{id: dom_id(article)}
+            %h3.mt-8.font-sans.font-thin Header
+            %p.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline= article.header
+            %h3.mt-8.font-sans.font-thin Subheader
+            %p.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline= article.subheader
+            %h3.mt-8.font-sans.font-thin Body
+            %p.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline= article.body
+            %h3.mt-8.font-sans.font-thin Status
+            %p.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline= article.status.humanize
