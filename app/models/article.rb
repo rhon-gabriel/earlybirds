@@ -11,6 +11,8 @@ class Article < ApplicationRecord
   validates_presence_of :status
   validates_presence_of :premium_status
 
+  has_paper_trail
+
   enum status: { pending: 0, approved: 1, rejected: 2, for_revision: 3 }
   enum premium_status: { free: 0, premium: 1 }
 
