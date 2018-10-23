@@ -13,6 +13,7 @@ Feature: Editor can set approval status and comment
         Given the following articles exist
             | header    | subheader            | body                  | category    | status  | comment                              |
             | Top title | A breaking news item | Today at craftacademy | Programming | pending | No comments currently logged         |
+            | Top title2 | A breaking news item | Today at craftacademy | Programming | pending | No comments currently logged         |   
 
     Scenario: Approve article for publishing
         When I visit the admin page
@@ -41,6 +42,6 @@ Feature: Editor can set approval status and comment
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
         Then I select "For revision" for "Top title"
-        And I fill in "Comments" with "Next time try to use more paragraphs"
+        And I fill in "Comments" for "Top title" with "Next time try to use more paragraphs"
         And I click on "Update" for "Top title" 
         Then I should see "Article not approved for publication, please see comments: Next time try to use more paragraphs"
