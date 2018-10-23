@@ -6,12 +6,20 @@ Given('I visit the admin section/page') do
   visit admin_root_path
 end
 
+Then('I should be on the admin page') do
+  expect(page).to have_current_path(admin_root_path)
+end
+
 When('I click on {string}') do |element_text|
   click_on element_text
 end
 
 When('I visit the create page') do
   visit new_article_path
+end
+
+Then('I should be on the create page') do
+  expect(page).to have_current_path(new_article_path)
 end
 
 When('I fill in {string} with {string}') do |field, content|
@@ -26,11 +34,11 @@ Then('I click {string}') do |button|
   click_on button
 end
 
-Then("I select {string}") do |value|
+Then('I select {string}') do |value|
   choose value
 end
 
-Then("stop") do
+Then('stop') do
   binding.pry
 end
 
