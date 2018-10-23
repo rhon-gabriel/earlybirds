@@ -21,14 +21,13 @@ Feature: Journalist can resubmit article marked as for revision
         And I should see "Today at craftacademy"
         And I should see "For revision"
         When I click "Update article"
-        Then I should be on the create page
-        And I should see "Top title"
+        Then I should be on the edit article page
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
         Then I fill in "Header" with "A better title"
-        And I click "Submit"
+        And I click "Re-submit"
         Then I should see "Your article was successfully saved in Programming section"
-        And I should be on the admin page
+        And I should be on the edit article page
         Then I click on "Review articles"
         Then I should see "A better title"
         And I should see "A breaking news item"

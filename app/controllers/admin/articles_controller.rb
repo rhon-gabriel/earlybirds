@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::ArticlesController < Admin::AdminController
-  before_action :load_categories, only: %i[new create]
+  before_action :load_categories, only: %i[new create edit]
 
   def index
     @articles = Article.pending

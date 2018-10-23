@@ -18,8 +18,9 @@ When('I visit the create page') do
   visit new_article_path
 end
 
-Then('I should be on the create page') do
-  expect(page).to have_current_path(new_article_path)
+Then('I should be on the edit article page') do
+  article = Article.last
+  expect(page).to have_current_path(edit_admin_article_path(article))
 end
 
 When('I fill in {string} with {string}') do |field, content|
