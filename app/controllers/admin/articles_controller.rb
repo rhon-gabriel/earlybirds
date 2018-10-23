@@ -33,6 +33,7 @@ class Admin::ArticlesController < Admin::AdminController
       @article.update_attribute(:comment, article_params[:comment])
       redirect_to admin_articles_path, notice: "Article not approved for publication, please see comments: #{@article.comment}"
     elsif @article.for_revision? && URI(request.referer).path == edit_admin_article_path
+      @article.update(article_params)
       @article.update_attribute(:status, :pending)
       redirect_to admin_root_path, notice: "Your article was successfully re-submitted"
     end
