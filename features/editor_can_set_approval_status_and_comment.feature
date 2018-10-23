@@ -20,8 +20,8 @@ Feature: Editor can set approval status and comment
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
-        Then I select "Approved"
-        And I click on "Update"
+        Then I select "Approved" for "Top title"
+        And I click on "Update" for "Top title"
         Then I should see "Article approved for publication"
 
     Scenario: Reject article for publishing
@@ -30,8 +30,8 @@ Feature: Editor can set approval status and comment
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
-        Then I select "Rejected"
-        And I click on "Update"
+        Then I select "Rejected" for "Top title"
+        And I click on "Update" for "Top title"
         Then I should see "Article not approved for publication"
 
     Scenario: Reject article for publishing with comments
@@ -40,7 +40,7 @@ Feature: Editor can set approval status and comment
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
-        Then I select "For revision"
+        Then I select "For revision" for "Top title"
         And I fill in "Comments" with "Next time try to use more paragraphs"
-        And I click on "Update"
+        And I click on "Update" for "Top title" 
         Then I should see "Article not approved for publication, please see comments: Next time try to use more paragraphs"
