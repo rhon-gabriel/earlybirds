@@ -47,3 +47,10 @@ Given("I click on {string} for {string}") do |value, article_header|
     click_on value
   end
 end
+
+Given("I fill in {string} for {string} with {string}") do |field, article_header, content|
+  article = Article.find_by_header article_header
+  within "#article_#{article.id}" do
+    fill_in field, with: content
+  end
+end 
