@@ -20,7 +20,6 @@ Feature: Journalist can see reviewed articles
 
     Scenario: View list of reviewed articles
         When I visit the admin page
-        And stop
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
