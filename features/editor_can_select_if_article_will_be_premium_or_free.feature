@@ -11,14 +11,16 @@ Feature: Editor can select if in-house approved article is free or premium
             | Programming |
 
         Given the following articles exist
-            | header    | subheader            | body                  | category    | status  | comment                      | premium_status |
-            | Top title | A breaking news item | Today at craftacademy | Programming | pending | No comments currently logged | free           |
+            | header     | category    | status  | comment                      | premium_status |
+            | Top title  | Programming | pending | No comments currently logged | free           |
+            | Top title2 | Programming | pending | No comments currently logged | free           |
+
 
         Given I visit the admin page
         And I click on "Review articles"
-        And I select "Approved"
-        
-    Scenario: Article successfully approved with Premium status    
-        And I select "Premium"
-        And I click on "Update"
+        And I select "Approved" for "Top title"
+
+    Scenario: Article successfully approved with Premium status
+        And I select "Premium" for "Top title"
+        And I click on "Update" for "Top title"
         Then I should see "Premium article approved for publication"
