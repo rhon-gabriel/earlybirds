@@ -16,7 +16,7 @@ Feature: Editor can set approval status and comment
 
     Scenario: Approve article for publishing
         When I visit the admin page
-        And I click on "Review articles"
+        And I click on "Review in-House articles"
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
@@ -26,7 +26,7 @@ Feature: Editor can set approval status and comment
 
     Scenario: Reject article for publishing
         When I visit the admin page
-        And I click on "Review articles"
+        And I click on "Review in-House articles"
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
@@ -36,7 +36,7 @@ Feature: Editor can set approval status and comment
 
     Scenario: Reject article for publishing with comments
         When I visit the admin page
-        And I click on "Review articles"
+        And I click on "Review in-House articles"
         Then I should see "Top title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
