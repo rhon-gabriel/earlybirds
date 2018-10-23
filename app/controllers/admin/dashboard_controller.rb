@@ -2,6 +2,6 @@
 
 class Admin::DashboardController < Admin::AdminController
   def index
-    @articles = Article.where.not(status: 0)
+    @articles = Article.where.not(status: :pending)
   end
 end
