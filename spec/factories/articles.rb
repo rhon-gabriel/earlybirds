@@ -5,6 +5,7 @@ FactoryBot.define do
     body { "MyText" }
     status { :pending }
     comment { "MyText" }
+    premium_status { :free }
     
     category
   end
