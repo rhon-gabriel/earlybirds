@@ -37,6 +37,10 @@ class Admin::ArticlesController < Admin::AdminController
 
   def edit
     @article = Article.find(params[:id])
+    # if @article.for_revision?
+    #   binding.pry
+    #   @article.update_attribute(:status, :pending)
+    # end
   end
 
   private
