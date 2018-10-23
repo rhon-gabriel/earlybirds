@@ -32,15 +32,13 @@ class Admin::ArticlesController < Admin::AdminController
     elsif @article.for_revision?
       @article.update_attribute(:comment, article_params[:comment])
       redirect_to admin_articles_path, notice: "Article not approved for publication, please see comments: #{@article.comment}"
+    elsif @article.pending?
+      redirect_to admin_articles_path, notice: "Your article was successfully re-submitted"
     end
   end
 
   def edit
     @article = Article.find(params[:id])
-    # if @article.for_revision?
-    #   binding.pry
-    #   @article.update_attribute(:status, :pending)
-    # end
   end
 
   private

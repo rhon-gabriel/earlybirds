@@ -26,9 +26,10 @@ Feature: Journalist can resubmit article marked as for revision
         And I should see "Today at craftacademy"
         Then I fill in "Header" with "A better title"
         And I click "Re-submit"
-        Then I should see "Your article was successfully saved in Programming section"
-        And I should be on the edit article page
+        Then I should be on the admin page
+        And stop
+        And I should see "Your article was successfully re-submitted"
         Then I click on "Review articles"
-        Then I should see "A better title"
+        And I should see "A better title"
         And I should see "A breaking news item"
         And I should see "Today at craftacademy"
