@@ -18,11 +18,30 @@
 document.addEventListener('turbolinks:load', () => {
     let textElement = document.getElementById('article_comment')
     let forRevisionButton = document.getElementById('article_status_for_revision')
+
     if (textElement && forRevisionButton) {
         textElement.disabled = true
         forRevisionButton.addEventListener('click', () => {
             if (forRevisionButton.checked === true) {
                 textElement.disabled = false
+            }
+        })
+    }
+
+})
+
+document.addEventListener('turbolinks:load', () => {
+    let approvedButton = document.getElementById('article_status_approved')
+    let premiumButton = document.getElementById('article_premium_status_premium')
+    let freeButton = document.getElementById('article_premium_status_free')
+    
+    if (approvedButton && premiumButton) {
+        premiumButton.disabled = true
+        freeButton.disabled = true
+        approvedButton.addEventListener('click', () => {
+            if (approvedButton.checked === true) {
+                premiumButton.disabled = false
+                freeButton.disabled = false
             }
         })
     }

@@ -11,6 +11,8 @@
             = form_with url: admin_article_path(article), scope: :article, local: true, method: :patch do |form|
                 %div.mt-8.font-sans.font-thin.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline
                     = form.collection_radio_buttons :status, Article.statuses.keys, :dup, :humanize
+                %div.mt-8.font-sans.font-thin.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline
+                    = form.collection_radio_buttons :premium_status, Article.premium_statuses.keys, :dup, :humanize
                 %div.mt-8.font-sans.font-thin
                     = form.label :comment, 'Comments'
                     = form.text_area :comment, placeholder: 'Comments to be addressed', class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
