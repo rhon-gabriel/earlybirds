@@ -29,11 +29,12 @@ class Admin::ArticlesController < Admin::AdminController
       redirect_to admin_articles_path, notice: 'Premium article approved for publication'  
     elsif @article.rejected?
       redirect_to admin_articles_path, notice: 'Article not approved for publication'
-    elsif @article.for_revision?
+    elsif @article.for_revision? && URI(request.referer).path == admin_articles_path
       @article.update_attribute(:comment, article_params[:comment])
       redirect_to admin_articles_path, notice: "Article not approved for publication, please see comments: #{@article.comment}"
-    elsif @article.pending?
-      redirect_to admin_articles_path, notice: "Your article was successfully re-submitted"
+    elsif @article.for_revision? && URI(request.referer).path == edit_admin_article_path
+      @article.update_attribute(:status, :pending)
+      redirect_to admin_root_path, notice: "Your article was successfully re-submitted"
     end
   end
 

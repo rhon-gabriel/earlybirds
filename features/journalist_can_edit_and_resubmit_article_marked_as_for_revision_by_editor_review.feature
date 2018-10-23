@@ -27,7 +27,6 @@ Feature: Journalist can resubmit article marked as for revision
         Then I fill in "Header" with "A better title"
         And I click "Re-submit"
         Then I should be on the admin page
-        And stop
         And I should see "Your article was successfully re-submitted"
         Then I click on "Review articles"
         And I should see "A better title"
