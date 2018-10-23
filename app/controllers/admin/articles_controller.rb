@@ -35,6 +35,10 @@ class Admin::ArticlesController < Admin::AdminController
     end
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   private
 
   def update_status
