@@ -1,5 +1,5 @@
-@javascript
-
+@javascript 
+@api_call
 Feature: Display third-party articles
     As an Editor,
     In order to select external articles for publication,
