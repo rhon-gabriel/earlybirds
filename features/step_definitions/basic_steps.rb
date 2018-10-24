@@ -6,8 +6,13 @@ Given('I visit the admin section/page') do
   visit admin_root_path
 end
 
+Given("I am on the third-party articles page") do
+  visit api_news_index_path
+end
+
 Then('I should be on the admin page') do
   expect(page).to have_current_path(admin_root_path)
+
 end
 
 When('I click on {string}') do |element_text|
