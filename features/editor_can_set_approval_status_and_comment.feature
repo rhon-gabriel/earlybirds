@@ -17,7 +17,7 @@ Feature: Editor can set approval status and comment
 
     Scenario: Approve article for publishing
         When I visit the admin page
-        And I click on "Review in-House articles"
+        And I click on "Review articles"
         Then I should see "Top title"
         Then I select "Approved" for "Top title"
         And I click on "Update" for "Top title"
@@ -25,7 +25,7 @@ Feature: Editor can set approval status and comment
 
     Scenario: Reject article for publishing
         When I visit the admin page
-        And I click on "Review in-House articles"
+        And I click on "Review articles"
         Then I should see "Top title"
         Then I select "Rejected" for "Top title"
         And I click on "Update" for "Top title"
@@ -33,7 +33,7 @@ Feature: Editor can set approval status and comment
 
     Scenario: Reject article for publishing with comments
         When I visit the admin page
-        And I click on "Review in-House articles"
+        And I click on "Review articles"
         Then I should see "Top title"
         Then I select "For revision" for "Top title"
         And I fill in "Comments" for "Top title" with "Next time try to use more paragraphs"

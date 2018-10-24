@@ -17,7 +17,7 @@ Feature: Editor can select if in-house approved article is free or premium
 
 
         Given I visit the admin page
-        And I click on "Review in-House articles"
+        And I click on "Review articles"
         And I select "Approved" for "Top title"
 
     Scenario: Article successfully approved with Premium status
