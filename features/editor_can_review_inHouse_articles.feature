@@ -8,13 +8,13 @@ Feature: Editor can review in-house articles
     Background:
         Given the following categories exist
             | name        |
-            | Programming |
-            | Education   |
+            | programming |
+            | education   |
 
         Given the following articles exist
             | header        | subheader             | body                     | category    | status   |
-            | Top title     | A breaking news item  | Today at craftacademy    | Programming | pending  |
-            | Other stories | Another breaking news | Tomorrow at craftacademy | Education   | approved |
+            | Top title     | A breaking news item  | Today at craftacademy    | programming | pending  |
+            | Other stories | Another breaking news | Tomorrow at craftacademy | education   | approved |
 
 
     Scenario: View list of articles submitted for approval
