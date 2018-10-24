@@ -9,9 +9,9 @@ Then('I should not see {string}') do |content|
 end
 
 Then("I should be on the signup page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(current_path).to eq new_user_registration_path
 end
 
 Then("I should be on the signin page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(current_path).to eq new_user_session_path 
 end
