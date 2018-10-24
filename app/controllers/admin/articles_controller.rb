@@ -2,6 +2,9 @@
 
 class Admin::ArticlesController < Admin::AdminController
   before_action :load_categories, only: %i[new create edit]
+  before_action only: %i[update edit] do
+    find_article
+  end
 
   def index
     @articles = Article.pending
@@ -20,7 +23,6 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def update
-    @article = Article.find(params[:id])
     update_status if article_params[:status]
     update_premium_status if article_params[:premium_status]
     if @article.approved? && @article.free?
@@ -40,10 +42,13 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   private
+
+  def find_article
+    @article = Article.find(params[:id])
+  end
 
   def update_status
     @article.send([article_params[:status], '!'].join.to_sym)
