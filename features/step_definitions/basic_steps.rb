@@ -34,3 +34,23 @@ Then("stop") do
   binding.pry
 end
 
+Given("I select {string} for {string}") do |value, article_header|
+  article = Article.find_by_header article_header
+  within "#article_#{article.id}" do
+    choose value
+  end
+end
+
+Given("I click on {string} for {string}") do |value, article_header|
+  article = Article.find_by_header article_header
+  within "#article_#{article.id}" do
+    click_on value
+  end
+end
+
+Given("I fill in {string} for {string} with {string}") do |field, article_header, content|
+  article = Article.find_by_header article_header
+  within "#article_#{article.id}" do
+    fill_in field, with: content
+  end
+end 
