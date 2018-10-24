@@ -18,5 +18,5 @@ Feature: Login capabilities
         Then I should be on the signin page
         And I fill in "Email" with "email@email.com"
         And I fill in "Password" with "mypassword"
-        And I click on "Login"
+        And I click on "Log in"
         Then I should see "Signed in successfully."
