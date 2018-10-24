@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml-rails'
 gem 'webpacker'
 gem 'tailwindcss', '~> 0.2.0'
+gem 'devise'
 
 group :development, :test do
   gem 'factory_bot_rails'
