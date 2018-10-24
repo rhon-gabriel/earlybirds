@@ -15,6 +15,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml-rails'
 gem 'webpacker'
 gem 'tailwindcss', '~> 0.2.0'
+gem 'rest-client'
+gem 'news-api'
 
 group :development, :test do
   gem 'factory_bot_rails'
@@ -27,6 +29,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'webmock'
 end
 
 group :development do

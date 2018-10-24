@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class Admin::ArticlesController < Admin::AdminController
-  before_action :load_categories, only: %i[new create]
+  before_action :load_categories, only: %i[new create edit]
+  before_action only: %i[update edit] do
+    find_article
+  end
 
   def index
     @articles = Article.pending
@@ -20,7 +23,6 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def update
-    @article = Article.find(params[:id])
     update_status if article_params[:status]
     update_premium_status if article_params[:premium_status]
     if @article.approved? && @article.free?
@@ -29,13 +31,24 @@ class Admin::ArticlesController < Admin::AdminController
       redirect_to admin_articles_path, notice: 'Premium article approved for publication'  
     elsif @article.rejected?
       redirect_to admin_articles_path, notice: 'Article not approved for publication'
-    elsif @article.for_revision?
+    elsif @article.for_revision? && URI(request.referer).path == admin_articles_path
       @article.update_attribute(:comment, article_params[:comment])
       redirect_to admin_articles_path, notice: "Article not approved for publication, please see comments: #{@article.comment}"
+    elsif @article.for_revision? && URI(request.referer).path == edit_admin_article_path
+      @article.update(article_params)
+      @article.pending!
+      redirect_to admin_root_path, notice: "Your article was successfully re-submitted"
     end
   end
 
+  def edit
+  end
+
   private
+
+  def find_article
+    @article = Article.find(params[:id])
+  end
 
   def update_status
     @article.send([article_params[:status], '!'].join.to_sym)

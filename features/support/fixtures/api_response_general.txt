@@ -1,0 +1,56 @@
+{ 
+    "status":"ok",
+    "totalResults":20,
+    "articles":[
+        {"source":
+            {"id":null,
+            "name":"Bbc.com"},
+    "author":"https://www.facebook.com/bbcnews",
+    "title":"Donald Trump: US will build up nuclear arsenal",
+    "description":"The US president says Russia has violated a key nuclear treaty, which he has threatened to abandon.",
+    "url":"https://www.bbc.com/news/world-us-canada-45946930",
+    "urlToImage":"https://ichef.bbci.co.uk/news/1024/branded_news/10BD6/production/_103966586_050122994-1.jpg",
+    "publishedAt":"2018-10-22T20:11:52Z","content":"Image copyright Getty Images Image caption Mr Trump says Russia has violated the Intermediate-Range Nuclear Forces treaty, which he has threatened to abandon US President Donald Trump has warned that the United States intended to build up its arsenal of nucle… [+2405 chars]"},
+    {"source":
+        {"id":null,
+        "name":"Cbssports.com"},
+    "author":"",
+    "title":"Patrick Peterson wants Cardinals to trade him: Here are five contenders who should call Arizona now",
+    "description":"Here are five teams that should go after Patrick Peterson",
+    "url":"https://www.cbssports.com/nfl/news/patrick-peterson-wants-cardinals-to-trade-him-here-are-five-contenders-who-should-call-arizona-now/",
+    "urlToImage":"https://sportshub.cbsistatic.com/i/r/2018/10/22/1edab57e-c653-4ccc-9eb5-98c536b320ed/thumbnail/770x433/dbce25bdb19b1acaae544602de74d385/patrickpeterson11.jpg",
+    "publishedAt":"2018-10-22T19:59:00Z","content":"Although the Arizona Cardinals have insisted that they have no plans to trade Patrick Peterson this year, it appears the All-Pro cornerback might be attempting to force their hand. CBS Sports NFL Insider Jason La Canfora has reported that Peterson is unhappy … [+4781 chars]"},
+    {"source":
+        {"id":null,
+        "name":"Espn.com"},
+    "author":null,
+    "title":"Dallas Cowboys trade first-round pick to Oakland Raiders for Amari Cooper",
+    "description":"The Dallas Cowboys made a move to benefit quarterback Dak Prescott by acquiring wide receiver Amari Cooper from the Oakland Raiders for a 2019 first-round draft pick.",
+    "url":"http://www.espn.com/nfl/story/_/id/25055195/dallas-cowboys-trade-first-round-pick-oakland-raiders-amari-cooper",
+    "urlToImage":"http://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2018%2F1022%2Fr451079_1296x729_16%2D9.jpg",
+    "publishedAt":"2018-10-22T19:52:30Z",
+    "content":"FRISCO, Texas -- The Dallas Cowboys made a move to benefit Dak Prescott by acquiring wide receiver Amari Cooper from the Oakland Raiders for a 2019 first-round pick. Raiders general manager Reggie McKenzie confirmed the trade Monday. Oakland will now have thr… [+3108 chars]"},
+        {"source":
+            {"id":"cnn",
+            "name":"CNN"},
+    "author":null,
+    "title":"Trump's making the migrant caravan a political issue. Here are the facts.",
+    "description":null,"url":"https://www.cnn.com/2018/10/22/politics/donald-trump-migrant-caravan-fact-check/index.html",
+    "urlToImage":null,
+    "publishedAt":"2018-10-22T19:24:00Z",
+    "content":null},
+        {"source":
+            {"id":"the-new-york-times",
+            "name":"The New York Times"},
+    "author":null,
+    "title":"Khashoggi Double Sent to Create False Trail in Turkey, Surveillance Images Suggest",
+    "description":"The use of a “body double” suggests a premeditated plan to cover up the Saudi journalist’s disappearance — possibly contradicting the Saudi narrative.",
+    "url":"https://www.nytimes.com/2018/10/22/world/middleeast/jamal-khashoggi-turkey-saudi-arabia.html",
+    "urlToImage":"https://static01.nyt.com/newsgraphics/images/icons/defaultPromoCrop.png",
+    "publishedAt":"2018-10-22T19:18:28Z",
+    "content":"Germany has suspended arms sales to the kingdom, but it is not a major source of Saudi arms. The United States and Britain rank first and second, with France a distant third, according to the Stockholm Institute on International Peace, which tracks arms sales… [+1574 chars]"
+        }
+    
+    ]
+    
+}
