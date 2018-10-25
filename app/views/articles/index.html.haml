@@ -4,7 +4,7 @@
   = link_to category.name, root_path(category: category.id)
 .allarticlelist
   - @articles.each do |article|
-    - if article.free?
+    - if article.free? || current_user&.subscriber
       %div{id: dom_id(article)}
         #header
           %p= article.header
@@ -16,4 +16,5 @@
           = image_tag("trump.jpg")
     - else
       %h1 You have to subscribe to see this content
+      = link_to "Become a premium subscriber", new_subscription_path
       

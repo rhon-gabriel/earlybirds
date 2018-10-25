@@ -33,16 +33,10 @@ Feature: Registered user can become subscriber and gain access to premium conten
 
     Scenario: User is allowed to see premium content if he is a subscriber
         Given I visit the site
-        And I should see "Free article"
-        And I should not see "Premium article"
         Then I click on "Become a premium subscriber"
-        And I fill in "Name" with "xxxxxx"
-        And I fill in "Card number" with "xxxxxx"
-        And I fill in "Expiry date" with "xxxxxx"
-        And I fill in "Postcode" with "xxxxxx"
-        And I click on "Submit payment"
+        And I click on "Submit FAKE payment"
         Then I should be on the landing page
         Then I should see "Thank you for registering for a premium subscription."
-        And I should see "Other news story"
+        And I should see "Free article"
         And I should see "Premium article"
 
