@@ -2,6 +2,48 @@
   = render partial: 'partials/navigation'
 - @categories.each do |category|
   = link_to category.name, root_path(category: category.id)
+
+%div.font-thin.text-base
+  %p News
+  - @apigeneral.each do | feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.news-title= feed.title
+      %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.news-content= feed.description
+      %p.news-author= feed.author
+
+  %p Politics
+  - @apipolitics.each do | feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.politics-title= feed.title
+      %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.politics-content= feed.description
+      %p.politics-author= feed.author
+
+  %p Sports
+  -  @apisports.each do |feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.article-title= feed.title
+      %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.article-content= feed.description
+      %p.article-author= feed.author
+
+  %p Business
+  -  @apibusiness.each do | feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.article-title= feed.title
+      %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.article-content= feed.description
+      %p.article-author= feed.author
+
+  %p Sweden
+  - @apisweden.each do | feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.article-title= feed.title
+      %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.article-content= feed.description
+      %p.article-author= feed.author
+
 .allarticlelist
   - if user_signed_in?
     - @articles.each do |article|
