@@ -36,4 +36,4 @@ Feature: Login capabilities
         And I fill in "Password" with "mypassword"
         And I click on "Log in"
         Then I should see "Signed in successfully."
-        And I should see "A premium article"
+        And I should not see "A premium article"

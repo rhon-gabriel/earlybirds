@@ -3,8 +3,8 @@
 - @categories.each do |category|
   = link_to category.name, root_path(category: category.id)
 .allarticlelist
-  - if user_signed_in?
-    - @articles.each do |article|
+  - @articles.each do |article|
+    - if article.free?
       %div{id: dom_id(article)}
         #header
           %p= article.header
@@ -14,15 +14,3 @@
           %p= article.body
         #imageplaceholder
           = image_tag("trump.jpg")
-  - else
-    - @articles.each do |article|
-      - if article.free?
-        %div{id: dom_id(article)}
-          #header
-            %p= article.header
-          #subheader
-            %p= article.subheader
-          #body
-            %p= article.body
-          #imageplaceholder
-            = image_tag("trump.jpg")

@@ -31,6 +31,15 @@ Capybara.javascript_driver = :selenium
 Capybara.server = :puma
 
 World(FactoryBot::Syntax::Methods)
+World(Warden::Test::Helpers)
+
+Before do 
+  Warden.test_mode!
+end
+
+After do 
+  Warden.test_reset!
+end
 
 Before '@api_call' do 
   stub_request(:get, "https://newsapi.org/v2/top-headlines?category=general&country=us&language=en&pageSize=5 ").

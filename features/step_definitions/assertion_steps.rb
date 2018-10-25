@@ -15,6 +15,7 @@ end
 Then("I should be on the signin page") do
   expect(current_path).to eq new_user_session_path 
 end
+
 And('I should see {string} element') do |element|
   expect(page).to have_css element
 end
