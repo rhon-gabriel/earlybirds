@@ -1,12 +1,12 @@
 @javascript 
 @api_call
-Feature: Display third-party articles
-    As an Editor,
-    In order to review external articles of interest
-    I would like to see a list of third party articles available.
+Feature: Display third-party articles on landing page
+    As a visitor,
+    In order to choose what article to read,
+    I would like to see a list of third party articles on the landing page
 
     Background:
-        Given I am on the third-party articles page
+        When I visit the site
 
     Scenario: View list of "News" category
         Then I should see "News"
