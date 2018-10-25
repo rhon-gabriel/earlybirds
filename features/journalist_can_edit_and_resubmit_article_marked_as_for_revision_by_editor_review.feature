@@ -8,11 +8,11 @@ Feature: Journalist can resubmit article marked as for revision
     Background:
         Given the following categories exist
             | name        |
-            | Programming |
+            | general |
 
         Given the following articles exist
             | header    | subheader            | body                  | category    | status       | comment                 |
-            | Top title | A breaking news item | Today at craftacademy | Programming | for_revision | Please update the title |
+            | Top title | A breaking news item | Today at craftacademy | general     | for_revision | Please update the title |
 
     Scenario: Article successfully updated and resubmitted - when marked For revision
         When I visit the admin page
