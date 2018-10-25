@@ -2,17 +2,6 @@
   = render partial: 'partials/navigation'
 - @categories.each do |category|
   = link_to category.name, root_path(category: category.id)
-.articlelist
-  - @articles.each do |article|
-    %div{id: dom_id(article)}
-      #header
-        %p= article.header
-      #subheader
-        %p= article.subheader
-      #body
-        %p= article.body
-      #imageplaceholder
-        = image_tag("trump.jpg")
 
 %div.font-thin.text-base
   %p News
@@ -54,3 +43,28 @@
       %img{:src => "#{feed.urlToImage}", :width => "300px"}/
       %p.article-content= feed.description
       %p.article-author= feed.author
+
+.allarticlelist
+  - if user_signed_in?
+    - @articles.each do |article|
+      %div{id: dom_id(article)}
+        #header
+          %p= article.header
+        #subheader
+          %p= article.subheader
+        #body
+          %p= article.body
+        #imageplaceholder
+          = image_tag("trump.jpg")
+  - else
+    - @articles.each do |article|
+      - if article.free?
+        %div{id: dom_id(article)}
+          #header
+            %p= article.header
+          #subheader
+            %p= article.subheader
+          #body
+            %p= article.body
+          #imageplaceholder
+            = image_tag("trump.jpg")
