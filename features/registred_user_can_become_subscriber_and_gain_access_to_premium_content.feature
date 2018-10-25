@@ -29,6 +29,7 @@ Feature: Registered user can become subscriber and gain access to premium conten
         Given I visit the site
         Then I should see "Free article"
         And I should not see "Premium article"
+        But I should see "You have to subscribe to see this content"
 
     Scenario: User is allowed to see premium content if he is a subscriber
         Given I visit the site
