@@ -7,18 +7,18 @@
   %p News
   - @apigeneral.each do | feed |
     %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-      %h5= feed.title
+      %h5.news-title= feed.title
       %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
-      %p.article-content= feed.description
-      %p.article-author= feed.author
+      %p.news-content= feed.description
+      %p.news-author= feed.author
 
   %p Politics
   - @apipolitics.each do | feed |
     %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-      %h5.article-title= feed.title
+      %h5.politics-title= feed.title
       %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
-      %p.article-content= feed.description
-      %p.article-author= feed.author
+      %p.politics-content= feed.description
+      %p.politics-author= feed.author
 
   %p Sports
   -  @apisports.each do |feed |
