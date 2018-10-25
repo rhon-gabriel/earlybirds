@@ -17,6 +17,10 @@
       %a.navitem.mr-4{href: "#responsive-header"}
         Politics
       %a.navitem{href: "#responsive-header"}
-        Sport
+    .text-sm.lg:flex-grow  
+      - if user_signed_in?
+        = link_to "Logout", destroy_user_session_path, method: :delete
+      - else
+        = link_to "Login", new_user_session_path
     %div
       %a.inline-block.text-lg.px-4.py-2.leading-none.border.rounded.text-white.border-white.hover:border-transparent.hover:text-purple.hover:bg-white.mt-4.lg:mt-0{:href => "#"} Premium

@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 2018_10_24_134537) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
-    t.integer "status"
     t.string "byline"
+    t.integer "status"
     t.text "comment"
     t.integer "premium_status"
     t.index ["category_id"], name: "index_articles_on_category_id"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 2018_10_24_134537) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "name"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "articles", "categories"
