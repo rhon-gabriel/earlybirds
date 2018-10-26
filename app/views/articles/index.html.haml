@@ -1,11 +1,5 @@
-.nav
-  = render partial: 'partials/navigation', locals: {articles: @articles}
 .allarticlelist
-  - @articles.each do |article|
-    =render partial: 'partials/business_articles', collection: @categories, as: :name
-    =render partial: 'partials/politics_articles', collection: @categories, as: :name
-    =render partial: 'partials/general_articles', collection: @categories, as: :name
-    =render partial: 'partials/sports_articles', collection: @categories, as: :name
+
   - @articles.each do |article|
     - if article.free? || current_user&.subscriber
       %div{id: dom_id(article)}
