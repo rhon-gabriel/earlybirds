@@ -3,21 +3,21 @@
 
 .allarticlelist
   .allarticle_grid
-  - @articles.each do |article|
-    .article_card
-    - if article.free? || current_user&.subscriber
-      %div{id: dom_id(article)}
-        #header
-          %p= article.header
-        #subheader
-          %p= article.subheader
-        #body
-          %p= article.body
-        #imageplaceholder
-          = image_tag("trump.jpg")
-    - else
-      %h1 You have to subscribe to see this content
-      = link_to "Become a premium subscriber", new_subscription_path
+    - @articles.each do |article|
+      .article_card
+        - if article.free? || current_user&.subscriber
+          %div{id: dom_id(article)}
+            #header
+              %p= article.header
+            #subheader
+              %p= article.subheader
+            #body
+              %p= article.body
+            #imageplaceholder
+              = image_tag("trump.jpg")
+        - else
+          %h1 You have to subscribe to see this content
+          = link_to "Become a premium subscriber", new_subscription_path
 
 %div.font-thin.text-base
   %p News

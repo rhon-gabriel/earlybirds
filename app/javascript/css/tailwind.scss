@@ -81,19 +81,21 @@
     background-image: linear-gradient(to right, config('colors.blue'), config('colors.purple'));
 }
 
-.all-articlelist 
-    grid-area: allarticles, text-align: centerrails, padding-top: 0px, padding-bottom: 25px, margin-bottom: 45px, margin-left: 0px, margin-right: 0px;
+.allarticlelist {
+    @apply flex-1 h-12;
+    @apply text-center;
+    @apply pt-4;
+    @apply pb-2;
+    @apply mb-4;
+}
 
+    .allarticle_grid {
+        @apply flex-1 h-12;
+    }
 
-    .allarticle_grid 
-        display: grid
-        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr))
-
-        .article_card 
-            .hover-image
-                width: 100%
-                height: 100%
-                object-fit: cover
-        
+        .article_card {
+            @apply max-w-xl;
+            @apply h-auto;
+        }
     
 
