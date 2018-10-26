@@ -1,4 +1,6 @@
 class SubscriptionsController < ApplicationController
+  layout 'application'
+
   def new
   end
 
