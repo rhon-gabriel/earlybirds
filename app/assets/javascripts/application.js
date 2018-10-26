@@ -33,7 +33,7 @@ const initiateStripeForm = () => {
     // get some code from stripe
 
     // Create a Stripe client.
-    let stripe = Stripe('pk_test_QicERB8w3kyqaYW3hUUQylRH');
+    let stripe = Stripe('pk_test_nLkFwDiZHqChixZqO09WOOgJ');
 
     // Create an instance of Elements.
     let elements = stripe.elements();

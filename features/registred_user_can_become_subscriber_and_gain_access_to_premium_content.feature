@@ -40,8 +40,7 @@ Feature: Registered user can become subscriber and gain access to premium conten
         Then I click on "Get Premium"
         And I fill in the stripe form
         And I click on "Submit payment"
-        Then stop
-        Then I should be on the landing page
+        Then I should be on the new subscription page
         Then I should see "Thank you for registering for a premium subscription."
         And I should see "Free article"
         And I should see "Premium article"

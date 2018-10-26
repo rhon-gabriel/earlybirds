@@ -20,6 +20,10 @@ Then("I should be on the signup page") do
   expect(current_path).to eq new_user_registration_path
 end
 
+Then("I should be on the new subscription page") do
+  expect(current_path).to eq new_subscription_path
+end
+
 Then("I should be on the signin page") do
   expect(current_path).to eq new_user_session_path 
 end
