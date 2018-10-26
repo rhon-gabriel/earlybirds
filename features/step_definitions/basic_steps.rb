@@ -6,11 +6,6 @@ Given('I visit the admin section/page') do
   visit admin_root_path
 end
 
-Then('I should be on the admin page') do
-  expect(page).to have_current_path(admin_root_path)
-
-end
-
 When('I click on {string}') do |element_text|
   click_on element_text
 end
@@ -64,3 +59,8 @@ Given("I fill in {string} for {string} with {string}") do |field, article_header
     fill_in field, with: content
   end
 end 
+
+Given("I am logged in as {string}") do |user_email|
+  user = User.find_by_email user_email 
+  login_as user
+end

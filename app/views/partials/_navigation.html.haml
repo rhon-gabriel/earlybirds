@@ -19,8 +19,7 @@
       %a.navitem{href: "#responsive-header"}
     .text-sm.lg:flex-grow  
       - if user_signed_in?
-        = link_to "Logout", destroy_user_session_path, method: :delete
+        = link_to "Logout", destroy_user_session_path, method: :delete, class: "inline-block text-lg px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-purple hover:bg-white mt-4 lg:mt-0"
       - else
-        = link_to "Login", new_user_session_path
-    %div
-      %a.inline-block.text-lg.px-4.py-2.leading-none.border.rounded.text-white.border-white.hover:border-transparent.hover:text-purple.hover:bg-white.mt-4.lg:mt-0{:href => "#"} Premium
+        = link_to "Login", new_user_session_path, class: "inline-block text-lg px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-purple hover:bg-white mt-4 lg:mt-0"
+    = link_to "Get Premium", new_subscription_path, class: "inline-block text-lg px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-purple hover:bg-white mt-4 lg:mt-0"

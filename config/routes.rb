@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root controller: :articles, action: :index
-    resources :api_news, only: :index
+  resources :api_news, only: :index
+  resources :subscriptions, only: [:new, :create]
+
 
   namespace :admin do
     root controller: :dashboard, action: :index

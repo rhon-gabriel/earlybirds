@@ -10,3 +10,10 @@ Given("the following categories exist") do |table|
     create(:category, category)
   end
 end
+
+
+Given("the following users exist") do |table|
+  table.hashes.each do |user_hash|
+    create(:user, user_hash)
+  end
+end

@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  layout 'application'
+  
   before_action :load_categories, only: %i[index]
 
   def index

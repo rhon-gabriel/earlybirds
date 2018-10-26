@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Admin::ArticlesController < Admin::AdminController
+  layout 'admin_dashboard'
+  
   before_action :load_categories, only: %i[new create edit]
   before_action only: %i[update edit] do
     find_article
