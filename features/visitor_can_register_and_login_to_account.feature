@@ -8,13 +8,13 @@ Feature: Login capabilities
     Background:
         Given the following categories exist
             | name        |
-            | Programming |
-            | Education   |
+            | general  |
+            | business |
 
         Given the following articles exist
-            | header            | subheader             | body                     | category    | premium_status |
-            | A free article    | A breaking news item  | Today at craftacademy    | Programming | free           |
-            | A premium article | Another breaking news | Tomorrow at craftacademy | Education   | premium        |
+            | header            | subheader             | body                     | category   | premium_status |
+            | A free article    | A breaking news item  | Today at craftacademy    | general    | free           |
+            | A premium article | Another breaking news | Tomorrow at craftacademy | business   | premium        |
 
 
     Scenario: Visitor sucessfully registers and logs in to site

@@ -8,12 +8,12 @@ Feature: Editor can select if in-house approved article is free or premium
     Background:
         Given the following categories exist
             | name        |
-            | Programming |
+            | general     |
 
         Given the following articles exist
-            | header     | category    | status  | comment                      | premium_status |
-            | Top title  | Programming | pending | No comments currently logged | free           |
-            | Top title2 | Programming | pending | No comments currently logged | free           |
+            | header     | category | status  | comment                      | premium_status |
+            | Top title  | general  | pending | No comments currently logged | free           |
+            | Top title2 | general  | pending | No comments currently logged | free           |
 
 
         Given I visit the admin page
