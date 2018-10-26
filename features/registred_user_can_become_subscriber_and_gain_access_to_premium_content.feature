@@ -33,7 +33,7 @@ Feature: Registered user can become subscriber and gain access to premium conten
 
     Scenario: User is allowed to see premium content if he is a subscriber
         Given I visit the site
-        Then I click on "Become a premium subscriber"
+        Then I click on "Get Premium"
         And I click on "Submit FAKE payment"
         Then I should be on the landing page
         Then I should see "Thank you for registering for a premium subscription."
