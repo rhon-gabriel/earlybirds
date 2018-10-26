@@ -1,21 +1,66 @@
 .nav
   = render partial: 'partials/navigation', locals: {articles: @articles}
 .allarticlelist
-  - if user_signed_in?
-    - @articles.each do |article|
-      =render partial: 'partials/_business_articles', collection: @categories, as: :name
-      =render partial: 'partials/_politics_articles', collection: @categories, as: :name
-      =render partial: 'partials/_general_articles', collection: @categories, as: :name
-      =render partial: 'partials/_sports_articles', collection: @categories, as: :name
-  - else
-    - @articles.each do |article|
-      - if article.free?
-        %div{id: dom_id(article)}
-          #header
-            %p= article.header
-          #subheader
-            %p= article.subheader
-          #body
-            %p= article.body
-          #imageplaceholder
-            = image_tag("trump.jpg")
+  - @articles.each do |article|
+    =render partial: 'partials/business_articles', collection: @categories, as: :name
+    =render partial: 'partials/politics_articles', collection: @categories, as: :name
+    =render partial: 'partials/general_articles', collection: @categories, as: :name
+    =render partial: 'partials/sports_articles', collection: @categories, as: :name
+  - @articles.each do |article|
+    - if article.free? || current_user&.subscriber
+      %div{id: dom_id(article)}
+        #header
+          %p= article.header
+        #subheader
+          %p= article.subheader
+        #body
+          %p= article.body
+        #imageplaceholder
+          = image_tag("trump.jpg")
+    - else
+      %h1 You have to subscribe to see this content
+      = link_to "Become a premium subscriber", new_subscription_path
+
+%div.font-thin.text-base
+  %p News
+  - @apigeneral.each do | feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.news-title= feed.title
+      %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.news-content= feed.description
+      %p.news-author= feed.author
+
+  %p Politics
+  - @apipolitics.each do | feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.politics-title= feed.title
+      %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.politics-content= feed.description
+      %p.politics-author= feed.author
+
+  %p Sports
+  -  @apisports.each do |feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.article-title= feed.title
+      %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.article-content= feed.description
+      %p.article-author= feed.author
+
+  %p Business
+  -  @apibusiness.each do | feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.article-title= feed.title
+      %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.article-content= feed.description
+      %p.article-author= feed.author
+
+  %p Sweden
+  - @apisweden.each do | feed |
+    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
+      %h5.article-title= feed.title
+      %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+      %p.article-content= feed.description
+      %p.article-author= feed.author
+
+
+      

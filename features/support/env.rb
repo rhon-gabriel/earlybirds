@@ -31,9 +31,18 @@ Capybara.javascript_driver = :selenium
 Capybara.server = :puma
 
 World(FactoryBot::Syntax::Methods)
+World(Warden::Test::Helpers)
 
-Before '@api_call' do 
-  stub_request(:get, "https://newsapi.org/v2/top-headlines?category=general&country=us&language=en&pageSize=5 ").
+Before do 
+  Warden.test_mode!
+end
+
+After do 
+  Warden.test_reset!
+end
+
+Before '@api_call_news' do 
+  stub_request(:get, "https://newsapi.org/v2/top-headlines?category=general&country=us&language=en&pageSize=5" ).
   with(
     headers: {
       'Accept'=>'*/*',
@@ -43,4 +52,17 @@ Before '@api_call' do
       'X-Api-Key'=>Rails.application.credentials.api[:api_key]
     }).
   to_return(status: 200, body: Rails.root.join('features', 'support', 'fixtures', 'api_response_general.txt').read, headers: {})
+end
+
+Before '@api_call_politics' do 
+  stub_request(:get, "https://newsapi.org/v2/top-headlines?category=politics&country=us&language=en&pageSize=5").
+  with(
+    headers: {
+      'Accept'=>'*/*',
+      'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+      'Host'=>'newsapi.org',
+      'User-Agent'=>'Ruby',
+      'X-Api-Key'=>Rails.application.credentials.api[:api_key]
+    }).
+  to_return(status: 200, body: Rails.root.join('features', 'support', 'fixtures', 'api_response_politics.txt').read, headers: {})
 end

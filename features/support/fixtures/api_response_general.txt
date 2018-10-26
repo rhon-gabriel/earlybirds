@@ -7,7 +7,7 @@
             "name":"Bbc.com"},
     "author":"https://www.facebook.com/bbcnews",
     "title":"Donald Trump: US will build up nuclear arsenal",
-    "description":"The US president says Russia has violated a key nuclear treaty, which he has threatened to abandon.",
+    "description":"The US president says Russia",
     "url":"https://www.bbc.com/news/world-us-canada-45946930",
     "urlToImage":"https://ichef.bbci.co.uk/news/1024/branded_news/10BD6/production/_103966586_050122994-1.jpg",
     "publishedAt":"2018-10-22T20:11:52Z","content":"Image copyright Getty Images Image caption Mr Trump says Russia has violated the Intermediate-Range Nuclear Forces treaty, which he has threatened to abandon US President Donald Trump has warned that the United States intended to build up its arsenal of nucle… [+2405 chars]"},

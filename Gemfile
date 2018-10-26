@@ -18,6 +18,8 @@ gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
 gem 'rest-client'
 gem 'news-api'
+gem 'devise_token_auth'
+gem 'rack-cors', require: 'rack/cors'
 
 group :development, :test do
   gem 'factory_bot_rails'
