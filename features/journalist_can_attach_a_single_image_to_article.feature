@@ -3,6 +3,13 @@ Feature: Journalist Can Attach a Single Image to Article
     In order to make my articles more appealing,
     I would like to be able to attach a single image to my article when created or updated.
 
+    Background:
+        Given the following categories exist
+            | name     |
+            | general  |
+            | business |
+            | politics |
+
     Scenario: Journalist successfully creates an article with an image
         Given I visit the create page
         And I fill in "Header" with "Learning Rails 5"
