@@ -81,23 +81,6 @@
     background-image: linear-gradient(to right, config('colors.blue'), config('colors.purple'));
 }
 
-// .allarticlelist {
-//     @apply flex-1 h-12;
-//     @apply text-center;
-//     @apply pt-4;
-//     @apply pb-2;
-//     @apply mb-4;
-// }
-
-//     .allarticle_grid {
-//         @apply flex-1 h-12;
-//     }
-
-//         .article_card {
-//             @apply max-w-xl;
-//             @apply h-auto;
-//         }
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(25%, 50%));
