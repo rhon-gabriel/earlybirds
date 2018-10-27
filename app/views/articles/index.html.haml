@@ -14,8 +14,11 @@
                   .font-bold.text-xl.mb-2= article.subheader
                   %p.text-grey-darker.text-base= article.body              
             - else
-              %h1 You have to subscribe to see this content
-              = link_to "Become a premium subscriber", new_subscription_path
+              #header.px-6.py-4
+                .font-bold.text-xl.mb-2= article.header
+              .px-6.py-4
+                %h1.font-bold.text-xl.mb-2 You have to subscribe to see this content
+                = link_to "Become a premium subscriber", new_subscription_path
 
 %div.font-thin.text-base.pl-4.pr-4
   %h1.mb-4.mt-4 From our Partners
