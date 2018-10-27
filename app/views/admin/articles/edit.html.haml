@@ -1,22 +1,23 @@
-%h2.mt-8.font-sans.font-thin Article Submission Portal - Edit Article
-= form_for @article, url: admin_article_path , scope: :article, local: true  do |f|
-    %div.mt-8.font-sans.font-thin
-        = f.label :header
-        = f.text_field :header, class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
-    %div.m-auto.font-sans.font-thin
-        = f.label :subheader
-        = f.text_area :subheader, class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
-    %div.m-auto.font-sans.font-thin
-        = f.label :byline
-        = f.text_area :byline, class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
-    %div.m-auto.font-sans.font-thin
-        = f.label :body
-        = f.text_area :body, class: "shadow appearance-none border rounded w-full py-8 px-8 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
-    %div.mt-6.font-sans.font-thin
-        = f.label :category_id, 'Category'
-        = f.collection_select :category_id, @categories, :id, :name, class: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey"
-    %div.mt-6.font-sans.font-thin
-        = f.file_field :image
-        %br/
-    %div.mt-8.font-sans.font-thin
-        = f.submit "Re-submit", class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
+.container.m-auto
+    %h2.mt-8.font-sans.font-thin Article Submission Portal - Edit Article
+    = form_for @article, url: admin_article_path , scope: :article, local: true  do |f|
+        %div.mt-8.font-sans.font-thin
+            = f.label :header
+            = f.text_field :header, class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        %div.m-auto.font-sans.font-thin
+            = f.label :subheader
+            = f.text_area :subheader, class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        %div.m-auto.font-sans.font-thin
+            = f.label :byline
+            = f.text_area :byline, class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        %div.m-auto.font-sans.font-thin
+            = f.label :body
+            = f.text_area :body, class: "shadow appearance-none border rounded w-full py-8 px-8 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        %div.mt-6.font-sans.font-thin
+            = f.label :category_id, 'Category'
+            = f.collection_select :category_id, @categories, :id, :name, class: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey"
+        %div.mt-6.font-sans.font-thin
+            = f.file_field :image
+            %br/
+        %div.mt-8.font-sans.font-thin
+            = f.submit "Re-submit", class: "text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white"
