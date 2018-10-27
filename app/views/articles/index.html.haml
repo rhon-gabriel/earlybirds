@@ -3,18 +3,19 @@
   .allarticlelist.articlesgrid.ml-4.mr-4
     .allarticle_grid.grid.mb-4.pl-4.pr-4
       - @articles.each do |article|
-        .rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4.mt-3.mb-3
-          = image_tag("https://picsum.photos/700/300/?random")
-          - if article.free? || current_user&.subscriber
-            %div{id: dom_id(article)}
-              #header.px-6.py-4
-                .font-bold.text-xl.mb-2= article.header
-              #subheader.px-6.py-4 
-                .font-bold.text-xl.mb-2= article.subheader
-                %p.text-grey-darker.text-base= article.body              
-          - else
-            %h1 You have to subscribe to see this content
-            = link_to "Become a premium subscriber", new_subscription_path
+        - if article.approved?  
+          .rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4.mt-3.mb-3
+            = image_tag("https://picsum.photos/700/300/?random")
+            - if article.free? || current_user&.subscriber
+              %div{id: dom_id(article)}
+                #header.px-6.py-4
+                  .font-bold.text-xl.mb-2= article.header
+                #subheader.px-6.py-4 
+                  .font-bold.text-xl.mb-2= article.subheader
+                  %p.text-grey-darker.text-base= article.body              
+            - else
+              %h1 You have to subscribe to see this content
+              = link_to "Become a premium subscriber", new_subscription_path
 
 %div.font-thin.text-base.pl-4.pr-4
   %h1.mb-4.mt-4 From our Partners
