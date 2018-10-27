@@ -11,13 +11,13 @@ Feature: Articles on the landing page
       | business |
 
     Given the following articles exist
-      | header        | subheader             | body                     | category   |
-      | Top title     | A breaking news item  | Today at craftacademy    | general    |
-      | Other stories | Another breaking news | Tomorrow at craftacademy | business   |
+      | header        | subheader             | body                     | category | status   |
+      | Top title     | A breaking news item  | Today at craftacademy    | general  | approved |
+      | Other stories | Another breaking news | Tomorrow at craftacademy | business | approved |
 
   Scenario: View available articles on the landing page
     When I visit the site
-    And I click on "general"
+    And I click on "General"
     Then I should see "Top title"
     And I should see "A breaking news item"
     And I should see "Today at craftacademy"
