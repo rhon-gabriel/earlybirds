@@ -1,9 +1,9 @@
 %div.font-thin.text-base.pl-4.pr-4
   %h1.mb-4.mt-4 From our Newsroom
-  .allarticlelist.ml-4.mr-4
-    .allarticle_grid.flex.mb-4.pl-4.pr-4
+  .allarticlelist.articlesgrid.ml-4.mr-4
+    .allarticle_grid.grid.mb-4.pl-4.pr-4
       - @articles.each do |article|
-        .max-w-sm.rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4
+        .rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4
           = image_tag("trump.jpg")
           - if article.free? || current_user&.subscriber
             %div{id: dom_id(article)}
