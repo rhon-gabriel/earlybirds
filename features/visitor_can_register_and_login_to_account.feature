@@ -12,15 +12,15 @@ Feature: Login capabilities
             | business |
 
         Given the following articles exist
-            | header            | subheader             | body                     | category | premium_status | status   |
-            | A free article    | A breaking news item  | Today at craftacademy    | general  | free           | approved |
-            | A premium article | Another breaking news | Tomorrow at craftacademy | business | premium        | approved |
+            | header            | subheader | body                     | category | premium_status | status   |
+            | A free article    | For free  | Today at craftacademy    | general  | free           | approved |
+            | A premium article | Paid for  | Tomorrow at craftacademy | business | premium        | approved |
 
 
     Scenario: Visitor sucessfully registers and logs in to site
         Given I visit the site
-        And I should see "A free article"
-        And I should not see "A premium article"
+        And I should see "For free"
+        And I should not see "Paid for"
         And I click on "Login"
         And I click on "Sign up"
         Then I should be on the signup page
@@ -36,4 +36,4 @@ Feature: Login capabilities
         And I fill in "Password" with "mypassword"
         And I click on "Log in"
         Then I should see "Signed in successfully."
-        And I should not see "A premium article"
+        And I should not see "Paid for"
