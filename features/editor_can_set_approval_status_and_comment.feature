@@ -7,13 +7,14 @@ Feature: Editor can set approval status and comment
 
     Background:
         Given the following categories exist
-            | name        |
-            | Programming |
+            | name     |
+            | general  |
+     
 
         Given the following articles exist
-            | header    |  category    | status  | comment                              |
-            | Top title |  Programming | pending | No comments currently logged         |
-            | Top title2|  Programming | pending | No comments currently logged         |   
+            | header    |  category  | status  | comment                              |
+            | Top title |  general   | pending | No comments currently logged         |
+            | Top title2|  general   | pending | No comments currently logged         |   
 
     Scenario: Approve article for publishing
         When I visit the admin page

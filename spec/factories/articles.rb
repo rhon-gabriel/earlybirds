@@ -6,7 +6,6 @@ FactoryBot.define do
     status { :pending }
     comment { "MyText" }
     premium_status { :free }
-    
     category
   end
 end
