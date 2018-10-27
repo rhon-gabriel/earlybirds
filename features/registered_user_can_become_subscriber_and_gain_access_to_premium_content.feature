@@ -19,9 +19,9 @@ Feature: Registered user can become subscriber and gain access to premium conten
             | politics |
 
         Given the following articles exist
-            | header          | premium_status | category |
-            | Premium article | premium        | general  |
-            | Free article    | free           | politics |
+            | header          | premium_status | category | status   |
+            | Premium article | premium        | general  | approved |
+            | Free article    | free           | politics | approved |
 
         And I am logged in as "user_1@email.com"
 

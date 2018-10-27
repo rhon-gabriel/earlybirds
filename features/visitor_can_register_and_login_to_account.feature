@@ -1,20 +1,20 @@
 @javascript
 
 Feature: Login capabilities
-        As a visitor,
-        In order to access premium content,
-        I would like to be able to register and login to Early Birds.
+    As a visitor,
+    In order to access premium content,
+    I would like to be able to register and login to Early Birds.
 
     Background:
         Given the following categories exist
-            | name        |
+            | name     |
             | general  |
             | business |
 
         Given the following articles exist
-            | header            | subheader             | body                     | category   | premium_status |
-            | A free article    | A breaking news item  | Today at craftacademy    | general    | free           |
-            | A premium article | Another breaking news | Tomorrow at craftacademy | business   | premium        |
+            | header            | subheader             | body                     | category | premium_status | status   |
+            | A free article    | A breaking news item  | Today at craftacademy    | general  | free           | approved |
+            | A premium article | Another breaking news | Tomorrow at craftacademy | business | premium        | approved |
 
 
     Scenario: Visitor sucessfully registers and logs in to site
