@@ -41,6 +41,7 @@ Feature: Registered user can become subscriber and gain access to premium conten
         And I fill in the stripe form
         And I click on "Submit payment"
         Then I should be on the new subscription page
+        Then I wait 2 seconds
         Then I should see "Thank you for registering for a premium subscription."
         And I should see "For free"
         And I should see "Paid for"
