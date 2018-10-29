@@ -5,7 +5,6 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    # here, we will insert the stripe charge
     customer = Stripe::Customer.create(
       email: current_user.email,
       source: params[:stripe_token]
