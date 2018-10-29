@@ -23,16 +23,16 @@ Feature: Registered user can become subscriber and gain access to premium conten
             | politics |
 
         Given the following articles exist
-            | header          | premium_status | category |
-            | Premium article | premium        | general  |
-            | Free article    | free           | politics |
+            | header          | subheader | premium_status | category | status   |
+            | Premium article | Paid for  | premium        | general  | approved |
+            | Free article    | For free  | free           | politics | approved |
 
         And I am logged in as "user_1@email.com"
 
     Scenario: User is restricted from premium content if he is NOT a subscriber
         Given I visit the site
-        Then I should see "Free article"
-        And I should not see "Premium article"
+        Then I should see "For free"
+        And I should not see "Paid for"
         But I should see "You have to subscribe to see this content"
 
     Scenario: User is allowed to see premium content if he is a subscriber
@@ -42,7 +42,7 @@ Feature: Registered user can become subscriber and gain access to premium conten
         And I click on "Submit payment"
         Then I should be on the new subscription page
         Then I should see "Thank you for registering for a premium subscription."
-        And I should see "Free article"
-        And I should see "Premium article"
+        And I should see "For free"
+        And I should see "Paid for"
 
 

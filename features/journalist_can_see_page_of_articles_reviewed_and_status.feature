@@ -7,15 +7,15 @@ Feature: Journalist can see reviewed articles
 
     Background:
         Given the following categories exist
-            | name        |
-            | Programming |
-            | Education   |
+            | name       |
+            | general    |
+            | business   |
 
         Given the following articles exist
-            | header        | subheader             | body                      | category    | status   |
-            | Top title     | A breaking news item  | Today at craftacademy     | Programming | approved |
-            | Other stories | Another breaking news | Tomorrow at craftacademy  | Education   | pending  |
-            | More stories  | More breaking news    | Yesterday at craftacademy | Education   | rejected |
+            | header        | subheader             | body                      | category  | status   |
+            | Top title     | A breaking news item  | Today at craftacademy     | general   | approved |
+            | Other stories | Another breaking news | Tomorrow at craftacademy  | business  | pending  |
+            | More stories  | More breaking news    | Yesterday at craftacademy | business  | rejected |
 
 
     Scenario: View list of reviewed articles

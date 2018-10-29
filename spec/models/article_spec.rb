@@ -51,6 +51,13 @@ RSpec.describe Article, type: :model do
     it { is_expected.to belong_to :category }
   end
 
+  describe 'Attachment' do
+    it 'is valid' do
+      subject.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename:'attachment.jpg', content_type:'image/jpg')
+      expect(subject.image).to be_attached
+    end
+  end
+
   describe 'Factory' do
     it 'should have valid Factory' do
       expect(create(:article)).to be_valid
