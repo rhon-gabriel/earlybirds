@@ -9,7 +9,8 @@
     - @articles.each do |article|
         .rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4.pt-2.pb-6.mt-3.mb-3
             %div{id: dom_id(article)}
-                -# = image_tag article.image
+                - if article.image.attached?
+                    = image_tag article.image, class:"max-w-md"
                 %h1.mt-8.font-sans.font-thin= article.header
                 %h3.mt-8.font-sans.font-thin Header
                 %p.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-grey-darker.leading-tight.outline-none.shadow-outline= article.header
