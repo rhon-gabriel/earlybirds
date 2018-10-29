@@ -4,11 +4,11 @@
     .allarticle_grid.grid.mb-4.pl-4.pr-4
       - @articles.each do |article|
         - if article.approved?  
-          .rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4.mt-3.mb-3
-            - if image_tag article.image.nil?
-              = image_tag("https://picsum.photos/700/300/?random")
+          .rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4.pt-4.mt-3.mb-3
+            - if article.image.attached?
+              = image_tag article.image, class:"max-w-md"
             - else
-              = image_tag article.image
+              = image_tag("https://picsum.photos/700/300/?random")
             - if article.free? || current_user&.subscriber
               %div{id: dom_id(article)}
                 #header.px-6.py-4
