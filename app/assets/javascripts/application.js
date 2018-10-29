@@ -16,7 +16,6 @@
 //= require_tree .
 
 const stripeTokenHandler = (token) => {
-    debugger;
     let paymentForm = document.getElementById('payment-form')
     let hiddenInput = document.createElement('input')
     hiddenInput.setAttribute('type', 'hidden')
@@ -30,16 +29,11 @@ const stripeTokenHandler = (token) => {
 }
 
 const initiateStripeForm = () => {
-    // get some code from stripe
 
-    // Create a Stripe client.
     let stripe = Stripe('pk_test_nLkFwDiZHqChixZqO09WOOgJ');
 
-    // Create an instance of Elements.
     let elements = stripe.elements();
 
-        // Custom styling can be passed to options when creating an Element.
-    // (Note that this demo uses a wider set of styles than the guide below.)
     let style = {
         base: {
             color: '#32325d',
@@ -57,7 +51,6 @@ const initiateStripeForm = () => {
         }
     };
 
-    // Create an instance of the card Element.
     let card = elements.create('card', { style: style });
 
     card.mount('#card-element')
