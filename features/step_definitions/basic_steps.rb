@@ -68,3 +68,7 @@ end
 And("I attach a file") do
   attach_file('article_image', "#{::Rails.root}/spec/fixtures/dummy_image.jpg")
 end
+
+Then('I wait {int} second(s)') do |seconds|
+  sleep seconds
+end
