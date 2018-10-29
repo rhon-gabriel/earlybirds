@@ -80,3 +80,18 @@
 .bg-gradient-blue-to-purple {
     background-image: linear-gradient(to right, config('colors.blue'), config('colors.purple'));
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 50%));
+}
+
+.articlesgrid {
+    grid-area: articles;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 25px;
+    margin-bottom: 45px;
+    margin-left: 0px;
+    margin-right: 0px;
+}

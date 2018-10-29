@@ -1,60 +1,71 @@
-- @categories.each do |category|
-  = link_to category.name, root_path(category: category.id)
+%div.font-thin.text-base.pl-4.pr-4
+  %h1.mb-4.mt-4 From our Newsroom
+  .allarticlelist.articlesgrid.ml-4.mr-4
+    .allarticle_grid.grid.mb-4.pl-4.pr-4
+      - @articles.each do |article|
+        - if article.approved?  
+          .rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4.mt-3.mb-3
+            = image_tag("https://picsum.photos/700/300/?random")
+            - if article.free? || current_user&.subscriber
+              %div{id: dom_id(article)}
+                #header.px-6.py-4
+                  .font-bold.text-xl.mb-2= article.header
+                #subheader.px-6.py-4 
+                  .font-bold.text-xl.mb-2= article.subheader
+                  %p.text-grey-darker.text-base= article.body              
+            - else
+              #header.px-6.py-4
+                .font-bold.text-xl.mb-2= article.header
+              .px-6.py-4
+                %h1.font-bold.text-xl.mb-2 You have to subscribe to see this content
+                = link_to "Become a premium subscriber", new_subscription_path
 
-%div.font-thin.text-base
-  %p News
-  - @apigeneral.each do | feed |
-    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-      %h5.news-title= feed.title
-      %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
-      %p.news-content= feed.description
-      %p.news-author= feed.author
+%div.font-thin.text-base.pl-4.pr-4
+  %h1.mb-4.mt-4 From our Partners
+  %h2.mb-4.mt-4 News
+  .allarticle_grid.flex.mb-4.pl-4.pr-4
+    - @apigeneral.each do | feed |
+      %div.max-w-sm.rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4
+        %h5.news-title= feed.title
+        %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
+        %p.news-content= feed.description
+        %p.news-author= feed.author
 
-  %p Politics
-  - @apipolitics.each do | feed |
-    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-      %h5.politics-title= feed.title
-      %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
-      %p.politics-content= feed.description
-      %p.politics-author= feed.author
+  %h2.mb-4.mt-4 Politics
+  .allarticle_grid.flex.mb-4.pl-4.pr-4
+    - @apipolitics.each do | feed |
+      %div.max-w-sm.rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4
+        %h5.politics-title= feed.title
+        %img.w-full{:src => "#{feed.urlToImage}", :width => "300px"}/
+        %p.politics-content= feed.description
+        %p.politics-author= feed.author
 
-  %p Sports
-  -  @apisports.each do |feed |
-    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-      %h5.article-title= feed.title
-      %img{:src => "#{feed.urlToImage}", :width => "300px"}/
-      %p.article-content= feed.description
-      %p.article-author= feed.author
+  %h2.mb-4.mt-4 Sports
+  .allarticle_grid.flex.mb-4.pl-4.pr-4
+    - @apisports.each do |feed |
+      %div.max-w-sm.rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4
+        %h5.article-title= feed.title
+        %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+        %p.article-content= feed.description
+        %p.article-author= feed.author
 
-  %p Business
-  -  @apibusiness.each do | feed |
-    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-      %h5.article-title= feed.title
-      %img{:src => "#{feed.urlToImage}", :width => "300px"}/
-      %p.article-content= feed.description
-      %p.article-author= feed.author
+  %h2.mb-4.mt-4 Business
+  .allarticle_grid.flex.mb-4.pl-4.pr-4
+    - @apibusiness.each do | feed |
+      %div.max-w-sm.rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4
+        %h5.article-title= feed.title
+        %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+        %p.article-content= feed.description
+        %p.article-author= feed.author
 
-  %p Sweden
-  - @apisweden.each do | feed |
-    %div.max-w-sm.rounded.overflow-hidden.shadow-lg
-      %h5.article-title= feed.title
-      %img{:src => "#{feed.urlToImage}", :width => "300px"}/
-      %p.article-content= feed.description
-      %p.article-author= feed.author
+  %h2.mb-4.mt-4 Sweden
+  .allarticle_grid.flex.mb-4.pl-4.pr-4
+    - @apisweden.each do | feed |
+      %div.max-w-sm.rounded.overflow-hidden.shadow-lg.w-200.h-auto.pl-3.pr-4
+        %h5.article-title= feed.title
+        %img{:src => "#{feed.urlToImage}", :width => "300px"}/
+        %p.article-content= feed.description
+        %p.article-author= feed.author
 
-.allarticlelist
-  - @articles.each do |article|
-    - if article.free? || current_user&.subscriber
-      %div{id: dom_id(article)}
-        #header
-          %p= article.header
-        #subheader
-          %p= article.subheader
-        #body
-          %p= article.body
-        #imageplaceholder
-          = image_tag("trump.jpg")
-    - else
-      %h1 You have to subscribe to see this content
-      = link_to "Become a premium subscriber", new_subscription_path
+
       

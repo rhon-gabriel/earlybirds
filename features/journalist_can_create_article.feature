@@ -8,9 +8,9 @@ Feature: Create articles inside category
   Background:
     Given the following categories exist
       | name     |
-      | Politics |
-      | Business |
-      | News     |
+      | general  |
+      | business |
+      | politics |
 
     And I visit the admin section
 
@@ -20,9 +20,9 @@ Feature: Create articles inside category
     And I fill in "Subheader" with "Excited about learning a new framework"
     And I fill in "Byline" with "Angelica the Great"
     And I fill in "Body" with "Angelica in craftacademy"
-    And I select "Politics" as "Category"
+    And I select "politics" as "Category"
     And I click "Submit"
-    Then I should see "Your article was successfully saved in Politics section"
+    Then I should see "Your article was successfully saved in politics section"
 
   Scenario: Journalist create article inside another category
     And I click "Create article"
@@ -30,6 +30,6 @@ Feature: Create articles inside category
     And I fill in "Subheader" with "Excited about learning a new framework"
     And I fill in "Byline" with "Angelica the Great"
     And I fill in "Body" with "Angelica in craftacademy"
-    And I select "Business" as "Category"
+    And I select "business" as "Category"
     Then I click "Submit"
-    Then I should see "Your article was successfully saved in Business section"
+    Then I should see "Your article was successfully saved in business section"
