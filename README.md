@@ -2,6 +2,9 @@
 
 # Week 8- 9 Lab
 
+# Deployment
+https://earlybirdnews.herokuapp.com/
+
 
 # Prerequisites
 
