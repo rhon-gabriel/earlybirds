@@ -11,7 +11,7 @@ When('I click on {string}') do |element_text|
 end
 
 When('I visit the create page') do
-  visit new_article_path
+  visit new_admin_article_path
 end
 
 Then('I should be on the edit article page') do
@@ -63,4 +63,12 @@ end
 Given("I am logged in as {string}") do |user_email|
   user = User.find_by_email user_email 
   login_as user
+end
+
+And("I attach a file") do
+  attach_file('article_image', "#{::Rails.root}/spec/fixtures/dummy_image.jpg")
+end
+
+Then('I wait {int} second(s)') do |seconds|
+  sleep seconds
 end

@@ -14,6 +14,8 @@ class Article < ApplicationRecord
   enum status: { pending: 0, approved: 1, rejected: 2, for_revision: 3 }
   enum premium_status: { free: 0, premium: 1 }
 
+  has_one_attached :image
+
   def set_default_status
     self.status ||= :pending
   end

@@ -16,6 +16,7 @@ class Admin::ArticlesController < Admin::AdminController
 
   def create
     @article = Article.create(article_params)
+    @article.image.attach(params[:article][:image])
     if @article.persisted?
       redirect_to root_path,  notice:  "Your article was successfully saved in #{@article.category.name} section"
     else

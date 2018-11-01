@@ -20,6 +20,7 @@ gem 'rest-client'
 gem 'news-api'
 gem 'devise_token_auth'
 gem 'rack-cors', require: 'rack/cors'
+gem 'stripe-rails'
 
 group :development, :test do
   gem 'factory_bot_rails'
